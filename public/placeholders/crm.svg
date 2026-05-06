@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#F0FDFA"/>
+  <rect x="60" y="80" width="200" height="120" rx="12" fill="#0F766E" fill-opacity="0.2" stroke="#0F766E" stroke-width="2"/>
+  <rect x="300" y="80" width="200" height="120" rx="12" fill="#0369A1" fill-opacity="0.2" stroke="#0369A1" stroke-width="2"/>
+  <rect x="540" y="80" width="200" height="120" rx="12" fill="#14B8A6" fill-opacity="0.2" stroke="#14B8A6" stroke-width="2"/>
+  <path d="M160 200 L400 200 M500 200 L640 200" stroke="#134E4A" stroke-width="2" stroke-opacity="0.3"/>
+  <text x="400" y="360" text-anchor="middle" font-family="system-ui" font-size="18" fill="#134E4A">CRM / Microservices</text>
+</svg>

@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "siteName": "Jhony Benítez — Portfolio",
+    "siteDescription": "Full Stack Developer, Software Architect y DevOps. Portfolio técnico con proyectos, arquitecturas y experiencia."
+  },
+  "Nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "skills": "Skills",
+    "ai": "IA",
+    "architectures": "Arquitecturas",
+    "certifications": "Certificaciones",
+    "contact": "Contacto",
+    "projectsFull": "Proyectos (lista)",
+    "changelog": "Changelog",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar"
+  },
+  "Hero": {
+    "role": "Full Stack Developer · Software Architect · DevOps",
+    "tagline": "Lidero productos y plataformas de extremo a extremo: diseño de sistemas escalables, implementación full stack y operación en cloud.",
+    "ctaProjects": "Ver proyectos",
+    "ctaCv": "Descargar CV",
+    "ctaCvSoonLine": "Próximamente",
+    "ctaCvSoonTitle": "Estamos preparando la descarga del CV; muy pronto disponible.",
+    "ctaContact": "Contactar",
+    "ctaGithub": "GitHub",
+    "ctaLinkedin": "LinkedIn"
+  },
+  "About": {
+    "title": "Sobre mí",
+    "p1": "Más de seis años construyendo aplicaciones web y liderando iniciativas donde convergen frontend, backend, arquitectura y DevOps. He trabajado como arquitecto de software en entornos de consultoría, lideré equipos en fintech y actualmente combino desarrollo senior con docencia universitaria y emprendimiento (Kahani E.A.S.).",
+    "p2": "Mi enfoque es entregar soluciones mantenibles y alineadas al negocio: límites claros entre módulos, contratos de API explícitos, observabilidad y despliegues repetibles. Disfruto traducir requisitos ambiguos en diseños que equipos puedan ejecutar con confianza.",
+    "p3": "Puedo liderar proyectos completos: desde el diagrama de contexto y las decisiones de arquitectura hasta pipelines CI/CD, infraestructura containerizada y experiencias de usuario pulidas."
+  },
+  "Ai": {
+    "title": "Inteligencia artificial",
+    "subtitle": "Cómo integro IA en el ciclo de desarrollo y en producto, con criterio técnico y responsable.",
+    "p1": "Uso modelos de lenguaje y herramientas de asistencia como aceleradores —no como sustitutos del diseño ni de la revisión humana—: borradores de código, exploración de APIs, documentación y pruebas asistidas.",
+    "p2": "Me interesa combinar buenas prácticas de ingeniería con flujos donde la IA mejora repetibilidad y claridad: prompts versionados, límites de contexto, validación de salidas y trazabilidad cuando hay datos sensibles.",
+    "highlights": [
+      "Asistencia en diseño de APIs, refactor y revisiones asistidas por LLM con revisión humana.",
+      "Integraciones prácticas (embeddings, RAG ligero) cuando el dominio lo amerita y hay fuentes confiables.",
+      "Criterio sobre costos, latencia y privacidad: qué delegar al modelo y qué mantener en reglas y tests.",
+      "Formación continua: seguimiento de evolución del ecosistema sin sustituir fundamentos de arquitectura."
+    ]
+  },
+  "Certifications": {
+    "badge": "Próximamente",
+    "title": "Certificaciones y cursos",
+    "subtitle": "Aquí publicaré certificaciones oficiales, formaciones y cursos relevantes al stack y a la arquitectura de software.",
+    "card1Title": "Certificaciones / badges",
+    "card1Hint": "Cloud, arquitectura, seguridad y buenas prácticas — detalle en preparación.",
+    "card2Title": "Cursos y talleres",
+    "card2Hint": "Formación continua y contenido aplicado a proyectos reales — próximamente."
+  },
+  "Skills": {
+    "title": "Skills técnicas",
+    "subtitle": "Stack y prácticas que aplico en producción.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "architecture": "Arquitectura",
+      "devops": "DevOps / Infraestructura"
+    }
+  },
+  "Architectures": {
+    "title": "Arquitecturas implementadas",
+    "subtitle": "Sistemas reales y patrones que he aplicado en consultoría y producto.",
+    "problemLabel": "Problema",
+    "stackLabel": "Stack",
+    "viewProject": "Ver caso de estudio",
+    "viewDocs": "Documentación"
+  },
+  "Projects": {
+    "title": "Proyectos destacados",
+    "subtitle": "Selección de trabajos representativos. Filtrá por categoría.",
+    "filterAll": "Todos",
+    "problemLabel": "Problema",
+    "stackLabel": "Stack",
+    "viewDetail": "Ver detalle",
+    "types": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "fullstack": "Full Stack",
+      "mobile": "Mobile",
+      "devops": "DevOps",
+      "architecture": "Arquitectura"
+    }
+  },
+  "ProjectDetail": {
+    "back": "Volver a proyectos",
+    "problem": "Problema",
+    "stack": "Stack",
+    "architecture": "Arquitectura",
+    "diagram": "Diagrama",
+    "components": "Componentes",
+    "flow": "Flujo principal",
+    "decisions": "Decisiones técnicas",
+    "benefits": "Beneficios",
+    "links": "Enlaces",
+    "linkDemo": "Demo",
+    "linkGithub": "GitHub",
+    "linkReadme": "README",
+    "linkDocs": "Documentación",
+    "linkDiagram": "Diagrama",
+    "features": "Features principales"
+  },
+  "Footer": {
+    "rights": "Todos los derechos reservados.",
+    "builtWith": "Construido con Next.js"
+  },
+  "ProjectsPage": {
+    "title": "Proyectos",
+    "description": "Casos de estudio y productos. Usá el filtro o la URL (?tipo=devops) para compartir una vista."
+  },
+  "Changelog": {
+    "title": "Changelog",
+    "metaTitle": "Changelog",
+    "metaDescription": "Historial de versiones y cambios notables de este sitio (mismo contenido que CHANGELOG.md del repositorio).",
+    "subtitle": "Historial de versiones del proyecto; se actualiza junto al archivo CHANGELOG.md en Git.",
+    "back": "Volver al inicio"
+  }
+}

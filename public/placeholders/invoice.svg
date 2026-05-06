@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#F0FDFA"/>
+  <rect x="200" y="70" width="400" height="300" rx="10" fill="#ffffff" stroke="#0F766E" stroke-width="2.5"/>
+  <rect x="230" y="110" width="200" height="10" rx="2" fill="#0F766E" fill-opacity="0.25"/>
+  <rect x="230" y="135" width="340" height="8" rx="2" fill="#134E4A" fill-opacity="0.12"/>
+  <rect x="230" y="155" width="300" height="8" rx="2" fill="#134E4A" fill-opacity="0.12"/>
+  <rect x="230" y="175" width="320" height="8" rx="2" fill="#134E4A" fill-opacity="0.12"/>
+  <path d="M230 210 H570 M230 235 H520 M230 260 H540" stroke="#0F766E" stroke-opacity="0.25" stroke-width="1.5"/>
+  <rect x="230" y="285" width="140" height="45" rx="6" fill="#0369A1" fill-opacity="0.2" stroke="#0369A1" stroke-width="2"/>
+  <path d="M250 305 L265 318 L288 295" stroke="#0F766E" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="400" y="285" width="170" height="45" rx="6" fill="#14B8A6" fill-opacity="0.15" stroke="#14B8A6" stroke-width="2"/>
+  <path d="M420 308 L430 318 L450 298 M455 308 L465 318 L485 298" stroke="#134E4A" stroke-width="2" stroke-linecap="round"/>
+  <rect x="480" y="95" width="90" height="70" rx="4" fill="#F0FDFA" stroke="#0369A1" stroke-width="1.5"/>
+  <path d="M495 115 H555 M495 130 H545 M495 145 H550" stroke="#0369A1" stroke-width="2" stroke-linecap="round"/>
+  <path d="M505 155 L515 145 L525 155" stroke="#0F766E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+</svg>

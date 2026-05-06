@@ -21,6 +21,7 @@
 /build
 
 # misc
+.cursor/
 .DS_Store
 *.pem
 

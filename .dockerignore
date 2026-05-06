@@ -1,0 +1,30 @@
+# deps
+node_modules
+npm-debug.log*
+yarn-error.log*
+.pnpm-store
+
+# next
+.next
+out
+
+# vcs / ide
+.git
+.gitignore
+.cursor
+*.md
+!README.md
+!CHANGELOG.md
+
+# env local (Dokploy inyecta variables al runtime)
+.env
+.env.*
+!.env.example
+
+# test / ci
+coverage
+.turbo
+
+# misc
+.DS_Store
+Profile.pdf

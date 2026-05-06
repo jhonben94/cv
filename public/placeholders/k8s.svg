@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#0c1211"/>
+  <circle cx="400" cy="200" r="80" stroke="#2DD4BF" stroke-width="3" fill="none"/>
+  <circle cx="280" cy="280" r="50" stroke="#38BDF8" stroke-width="2" fill="none"/>
+  <circle cx="520" cy="280" r="50" stroke="#38BDF8" stroke-width="2" fill="none"/>
+  <text x="400" y="380" text-anchor="middle" font-family="system-ui" font-size="18" fill="#99cfc4">Kubernetes / Infra</text>
+</svg>

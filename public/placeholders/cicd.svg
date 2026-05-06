@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#F0FDFA"/>
+  <rect x="120" y="180" width="140" height="60" rx="8" fill="#0F766E" fill-opacity="0.25" stroke="#0F766E"/>
+  <rect x="330" y="180" width="140" height="60" rx="8" fill="#0369A1" fill-opacity="0.25" stroke="#0369A1"/>
+  <rect x="540" y="180" width="140" height="60" rx="8" fill="#14B8A6" fill-opacity="0.25" stroke="#14B8A6"/>
+  <path d="M260 210 H330 M470 210 H540" stroke="#134E4A" stroke-width="2"/>
+  <text x="400" y="320" text-anchor="middle" font-family="system-ui" font-size="18" fill="#134E4A">CI/CD</text>
+</svg>

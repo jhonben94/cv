@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "siteName": "Jhony Benítez — Portfolio",
+    "siteDescription": "Full Stack Developer, Software Architect, and DevOps. Technical portfolio with projects, architectures, and experience."
+  },
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "ai": "AI",
+    "architectures": "Architectures",
+    "certifications": "Certifications",
+    "contact": "Contact",
+    "projectsFull": "All projects",
+    "changelog": "Changelog",
+    "openMenu": "Open menu",
+    "closeMenu": "Close"
+  },
+  "Hero": {
+    "role": "Full Stack Developer · Software Architect · DevOps",
+    "tagline": "I lead end-to-end products and platforms: scalable system design, full-stack delivery, and cloud operations.",
+    "ctaProjects": "View projects",
+    "ctaCv": "Download CV",
+    "ctaCvSoonLine": "Coming soon",
+    "ctaCvSoonTitle": "CV download is coming soon — stay tuned.",
+    "ctaContact": "Contact",
+    "ctaGithub": "GitHub",
+    "ctaLinkedin": "LinkedIn"
+  },
+  "About": {
+    "title": "About",
+    "p1": "Six-plus years building web applications and leading initiatives where frontend, backend, architecture, and DevOps meet. I have worked as a software architect in consulting, led teams in fintech, and currently combine senior development with university teaching and entrepreneurship (Kahani E.A.S.).",
+    "p2": "I focus on maintainable solutions tied to the business: clear module boundaries, explicit API contracts, observability, and repeatable deployments. I enjoy turning ambiguous requirements into designs teams can ship with confidence.",
+    "p3": "I can lead whole projects: from context diagrams and architectural decisions to CI/CD pipelines, container infrastructure, and polished user experiences."
+  },
+  "Ai": {
+    "title": "Artificial intelligence",
+    "subtitle": "How I integrate AI across development and product work—with engineering discipline and responsibility.",
+    "p1": "I use language models and assistant tooling as accelerators—not as a substitute for design or human review: draft code, API exploration, documentation, and test-assisted workflows.",
+    "p2": "I focus on pairing solid engineering practice with flows where AI improves repeatability and clarity: versioned prompts, context boundaries, output validation, and traceability when sensitive data is involved.",
+    "highlights": [
+      "API design assistance, refactors, and LLM-assisted reviews with mandatory human sign-off.",
+      "Practical integrations (embeddings, lightweight RAG) when the domain warrants it and sources are trustworthy.",
+      "Trade-offs on cost, latency, and privacy: what to delegate to the model vs. rules and automated tests.",
+      "Continuous learning: tracking ecosystem changes without replacing architecture fundamentals."
+    ]
+  },
+  "Certifications": {
+    "badge": "Coming soon",
+    "title": "Certifications & courses",
+    "subtitle": "This section will list official certifications, training, and courses aligned with my stack and software architecture practice.",
+    "card1Title": "Certifications / badges",
+    "card1Hint": "Cloud, architecture, security, and best practices — details coming soon.",
+    "card2Title": "Courses & workshops",
+    "card2Hint": "Continuous learning applied to real projects — coming soon."
+  },
+  "Skills": {
+    "title": "Technical skills",
+    "subtitle": "Stack and practices I apply in production.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "architecture": "Architecture",
+      "devops": "DevOps / Infrastructure"
+    }
+  },
+  "Architectures": {
+    "title": "Architectures delivered",
+    "subtitle": "Real systems and patterns from consulting and product work.",
+    "problemLabel": "Problem",
+    "stackLabel": "Stack",
+    "viewProject": "Open case study",
+    "viewDocs": "Documentation"
+  },
+  "Projects": {
+    "title": "Featured projects",
+    "subtitle": "Representative work. Filter by category.",
+    "filterAll": "All",
+    "problemLabel": "Problem",
+    "stackLabel": "Stack",
+    "viewDetail": "View details",
+    "types": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "fullstack": "Full Stack",
+      "mobile": "Mobile",
+      "devops": "DevOps",
+      "architecture": "Architecture"
+    }
+  },
+  "ProjectDetail": {
+    "back": "Back to projects",
+    "problem": "Problem",
+    "stack": "Stack",
+    "architecture": "Architecture",
+    "diagram": "Diagram",
+    "components": "Components",
+    "flow": "Main flow",
+    "decisions": "Technical decisions",
+    "benefits": "Benefits",
+    "links": "Links",
+    "linkDemo": "Demo",
+    "linkGithub": "GitHub",
+    "linkReadme": "README",
+    "linkDocs": "Documentation",
+    "linkDiagram": "Diagram",
+    "features": "Key features"
+  },
+  "Footer": {
+    "rights": "All rights reserved.",
+    "builtWith": "Built with Next.js"
+  },
+  "ProjectsPage": {
+    "title": "Projects",
+    "description": "Case studies and products. Use the filter or URL (?tipo=devops) to share a view."
+  },
+  "Changelog": {
+    "title": "Changelog",
+    "metaTitle": "Changelog",
+    "metaDescription": "Version history and notable changes for this site (same content as CHANGELOG.md in the repo).",
+    "subtitle": "Project version history; updated together with CHANGELOG.md in Git.",
+    "back": "Back to home"
+  }
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#F0FDFA"/>
+  <path d="M400 120 L400 220 M400 220 L340 280 M400 220 L460 280" stroke="#0369A1" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="400" cy="120" r="24" fill="#0F766E"/>
+  <text x="400" y="360" text-anchor="middle" font-family="system-ui" font-size="18" fill="#134E4A">Push / Firebase</text>
+</svg>

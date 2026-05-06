@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #0f766e;
+  --color-secondary: #14b8a6;
+  --color-cta: #0369a1;
+  --color-background: #f0fdfa;
+  --color-surface: #ffffff;
+  --color-text: #134e4a;
+  --color-muted: #5b7a75;
+  --color-border: rgba(15, 118, 110, 0.15);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --radius-card: 12px;
+  --radius-btn: 8px;
+}
+
+.dark {
+  --color-primary: #2dd4bf;
+  --color-secondary: #5eead4;
+  --color-cta: #38bdf8;
+  --color-background: #0c1211;
+  --color-surface: #141c1a;
+  --color-text: #ecfdf5;
+  --color-muted: #99cfc4;
+  --color-border: rgba(45, 212, 191, 0.2);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.45);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-text);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-cta);
+  --color-muted: var(--color-muted);
+  --color-border: var(--color-border);
+  --color-card: var(--color-surface);
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+.font-heading {
+  font-family: var(--font-mono);
 }
