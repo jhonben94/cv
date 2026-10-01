@@ -56,6 +56,7 @@ export default async function ProjectDetailPage({ params }: Props) {
   const flow = project.flowSummary[loc];
   const components = project.componentsSummary[loc];
   const archName = project.architectureName[loc];
+  const caseStudy = project.caseStudy;
 
   const linkCandidates: {
     key: keyof ProjectLinks;
@@ -112,6 +113,21 @@ export default async function ProjectDetailPage({ params }: Props) {
           <p className="mt-2 leading-relaxed text-[var(--color-muted)]">{problem}</p>
         </section>
 
+        {caseStudy ? (
+          <section>
+            <h2 className="font-heading text-lg font-semibold text-[var(--color-primary)]">
+              {t("constraints")}
+            </h2>
+            <ul className="mt-2 list-inside list-disc text-[var(--color-muted)]">
+              {caseStudy.constraints[loc].map((c) => (
+                <li key={c} className="mt-1">
+                  {c}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
         <section>
           <h2 className="font-heading text-lg font-semibold text-[var(--color-primary)]">
             {t("stack")}
@@ -119,7 +135,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           <p className="mt-2 text-[var(--color-muted)]">{project.stack.join(" · ")}</p>
         </section>
 
-        <section>
+        <section id="arquitectura" className="scroll-mt-24">
           <h2 className="font-heading text-lg font-semibold text-[var(--color-primary)]">
             {t("architecture")}: {archName}
           </h2>
@@ -184,11 +200,20 @@ export default async function ProjectDetailPage({ params }: Props) {
             {t("decisions")}
           </h2>
           <p className="mt-2 leading-relaxed text-[var(--color-muted)]">{decision}</p>
+          {caseStudy ? (
+            <ul className="mt-3 list-inside list-disc text-[var(--color-muted)]">
+              {caseStudy.keyDecisions[loc].map((d) => (
+                <li key={d} className="mt-1">
+                  {d}
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </section>
 
         <section>
           <h2 className="font-heading text-lg font-semibold text-[var(--color-primary)]">
-            {t("benefits")}
+            {caseStudy ? t("result") : t("benefits")}
           </h2>
           <p className="mt-2 leading-relaxed text-[var(--color-muted)]">{benefits}</p>
         </section>

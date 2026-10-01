@@ -8,7 +8,7 @@ import type {
 /** Párrafos del resumen profesional (solo PDF / datos editoriales). */
 export const cvSummary: Localized<string[]> = {
   es: [
-    "Ingeniero full stack senior con foco en arquitectura, plataformas distribuidas y ownership de punta a punta: APIs Java con Spring Boot (JHipster) y Quarkus, servicios Node.js/TypeScript, componentes GIS (Python/FastAPI) y frontends web (Angular) y móviles (Flutter), con SSR donde aplica.",
+    "Ingeniero de software senior y tech lead con foco en arquitectura, plataformas distribuidas y ownership técnico de punta a punta: APIs Java con Spring Boot (JHipster) y Quarkus, servicios Node.js/TypeScript, componentes GIS (Python/FastAPI) y frontends web (Angular) y móviles (Flutter), con SSR donde aplica.",
     "Diseño e implementación de sistemas modularizados: contratos REST explícitos, migraciones de esquema (Liquibase/Flyway), autenticación OIDC/JWT y separación clara entre servicios de dominio, integración y geometría.",
     "Lead técnico en SquareOne — ecosistema digital para federaciones de ajedrez: jugadores, clubes, transferencias, torneos e ingestión de datos de rankings externos sobre PostgreSQL y operaciones programadas.",
     "Dompir — migración de un ERP/POS Java EE forkeado por cliente a una plataforma multi-tenant (Spring Boot 4, Angular 21) con ETL idempotente y conciliación verificada: 20 de 20 conteos y 9 de 9 valores de control sin diferencias.",
@@ -17,7 +17,7 @@ export const cvSummary: Localized<string[]> = {
     "Cultura de entrega reproducible: Docker y Docker Compose multi-servicio, comprobaciones de salud en contenedor, exportación Prometheus donde aplica, scripts de build/push coordinados entre imágenes y despliegue en infraestructura gestionada (p. ej. Dokploy/Coolify) sin sacrificar seguridad.",
   ],
   en: [
-    "Senior full-stack engineer focused on architecture, distributed platforms, and end-to-end ownership: Java APIs on Spring Boot (JHipster) and Quarkus, TypeScript Node services, GIS components (Python/FastAPI), and Angular plus Flutter clients with SSR and product delivery experience.",
+    "Senior software engineer and tech lead focused on architecture, distributed platforms, and end-to-end technical ownership: Java APIs on Spring Boot (JHipster) and Quarkus, TypeScript Node services, GIS components (Python/FastAPI), and Angular plus Flutter clients with SSR and product delivery experience.",
     "I design modular systems with explicit REST contracts, schema migrations (Liquibase/Flyway), OIDC/JWT-first security, and clear boundaries between domain, integration, and geometry services.",
     "Technical lead on SquareOne — a digital ecosystem for chess federations covering players, clubs, transfers, tournaments, and ingestion of external rating data into PostgreSQL with scheduled operations.",
     "Dompir — migration of a client-forked Java EE ERP/POS into a multi-tenant platform (Spring Boot 4, Angular 21) with an idempotent ETL and verified reconciliation: 20 of 20 counts and 9 of 9 control values with no differences.",
@@ -30,84 +30,132 @@ export const cvSummary: Localized<string[]> = {
 /** Experiencia en orden cronológico inverso (lo más reciente primero). */
 export const cvExperience: CvExperienceEntry[] = [
   {
-    company: {
-      es: "Kahani E.A.S. / práctica independiente",
-      en: "Kahani E.A.S. / independent practice",
-    },
+    company: { es: "Edge Mobile Ideas", en: "Edge Mobile Ideas" },
     role: {
-      es: "Staff / desarrollo senior, arquitectura y producto",
-      en: "Staff / senior engineer, architecture, and product",
+      es: "Desarrollador de software senior",
+      en: "Senior Software Developer",
     },
-    period: {
-      es: "2022 — presente",
-      en: "2022 — present",
-    },
+    period: { es: "jul 2024 \u2014 presente", en: "Jul 2024 \u2014 present" },
     highlights: {
       es: [
-        "SquareOne: plataforma full stack para federación de ajedrez — API Quarkus (Java 21), Angular SSR, Keycloak OIDC, Flyway/PG y jobs orientados a rankings y procesos federativos; producto público squareone.kahani.dev.",
-        "Dompir — migración Strangler Fig de un ERP/POS Java EE (8 forks por cliente) a un backend multi-tenant Spring Boot 4 + Angular 21; ETL piloto verificado (3.317 ventas, 0 diferencias, checksums idénticos en 3 corridas).",
-        "SquareOne (mejoras): autorización por objeto, sync FIDE atómico con lock distribuido, bloqueo optimista, outbox de correo, Problem Details y 83 tests backend.",
-        "Zentra — ERP modular multi-servicio: Quarkus + Angular (PrimeNG), servicio Fastify para ETL/sync de registros tributarios públicos→PostgreSQL, Redis opcional, API geo Python sobre GeoPackage; compose y Dokploy como patrón de despliegue.",
-        "Venta Blitz — JHipster/Spring Boot (Java 17), Liquibase y PostgreSQL con stack desplegado vía Docker Compose; cliente Flutter MobX+Dio para vendedores con mapas, JWT y métricas operativas (exportación Prometheus opcional).",
-        "Lideré decisiones arquitectónicas entre monolitos modulares y servicios especializados, priorizando trazabilidad de datos, límites de contexto y operación estable en contenedor.",
-        "Automatización de builds (Maven Jib/Java, pipelines npm/Python) y publicación consistente de imágenes etiquetadas con versiones declarativas en pom/package/pyproject.",
-        "Docencia universitaria complementaria al delivery de producto; mentoría técnica a equipos y partners.",
+        "Desarrollo y evolución de soluciones full stack empresariales, integraciones y servicios backend, con participación en decisiones técnicas, despliegues y soporte en producción.",
+        "Java, Spring Boot, Quarkus, Angular, APIs REST/SOAP, bases de datos y entornos containerizados para entregar componentes mantenibles.",
       ],
       en: [
-        "SquareOne — full-stack federation platform: Quarkus APIs (Java 21), SSR Angular frontend, Keycloak OIDC, Flyway-managed PostgreSQL, and scheduled federation/rating workflows; public product at squareone.kahani.dev.",
-        "Dompir — Strangler Fig migration of a Java EE ERP/POS (8 client forks) into a Spring Boot 4 + Angular 21 multi-tenant backend; verified pilot ETL (3,317 sales, 0 differences, identical checksums across 3 runs).",
-        "SquareOne hardening: object-level authorization, atomic FIDE sync with distributed lock, optimistic locking, email outbox, Problem Details, and 83 backend tests.",
-        "Zentra — modular multi-service ERP: Quarkus plus Angular admin (PrimeNG); Fastify service for recurring public-registry ETL/sync into Postgres; optional Redis acceleration; Python GIS API on GeoPackage; Docker Compose stacks and Dokploy-oriented deployment splits.",
-        "Venta Blitz — Spring Boot/JHipster core (Java 17) with Liquibase and Postgres in Compose-based production footprints; Flutter sales app (MobX, Dio, maps, JWT) wired to REST with optional Prometheus export.",
-        "Led architectural trade-offs across modular monoliths vs dedicated services emphasizing data lineage, bounded contexts, and reliable container ops.",
-        "Automated repeatable builds (Maven Jib, npm/TS tooling, Python packaging) so container tags stay aligned with semantic versions in manifests.",
-        "University teaching complements hands-on ownership; mentorship for engineering partners.",
+        "Develop and evolve enterprise full stack solutions, integrations, and backend services, contributing to technical decisions, deployments, and production support.",
+        "Apply expertise in Java, Spring Boot, Quarkus, Angular, REST/SOAP APIs, databases, and containerized environments to deliver maintainable components.",
       ],
     },
   },
   {
-    company: {
-      es: "Entorno fintech (consultoría / producto)",
-      en: "Fintech environment (consulting / product)",
-    },
+    company: { es: "Kahani E.A.S.", en: "Kahani E.A.S." },
     role: {
-      es: "Arquitecto de software / desarrollo senior",
-      en: "Software architect / senior developer",
+      es: "CEO y fundador / liderazgo técnico de producto",
+      en: "CEO & Founder / product technical lead",
     },
-    period: {
-      es: "2019 — 2022",
-      en: "2019 — 2022",
-    },
+    period: { es: "feb 2024 \u2014 presente", en: "Feb 2024 \u2014 present" },
     highlights: {
       es: [
-        "Arquitectura de integraciones, APIs y equipos de entrega en contexto regulado.",
-        "Decisiones de stack, observabilidad y pipelines de despliegue para sistemas con alta carga transaccional.",
+        "Dirección de un negocio centrado en ajedrez (productos, servicios y experiencias): estrategia, operación comercial, selección de producto, marca, ferias y apoyo a torneos.",
+        "SquareOne / Kahani Ratings: plataforma full stack para federación de ajedrez — API Quarkus (Java 21), Angular SSR, Keycloak OIDC, Flyway/PostgreSQL y jobs de rankings; endurecimiento de seguridad, sync FIDE atómico con lock distribuido, bloqueo optimista, outbox de correo y 83 tests de backend; producto público ratings.kahani.com.py.",
+        "Dompir: migración Strangler Fig de un ERP/POS Java EE (8 forks por cliente) a un backend multi-tenant Spring Boot 4 + Angular 21; ETL piloto verificado (3.317 ventas, 0 diferencias, checksums idénticos en 3 corridas).",
+        "Zentra (ERP modular Quarkus + Angular, sincronización DNIT con Fastify/Redis, API GIS en Python) y Venta Blitz (JHipster + app Flutter), desplegados con Docker Compose y Dokploy.",
       ],
       en: [
-        "Architecture for integrations, APIs, and delivery teams operating under regulatory constraints.",
-        "Stack selections, observability baselines, and deployment pipelines for transaction-heavy systems.",
+        "Lead an end-to-end chess-focused business spanning products, services, and experiences, including strategy, commercial operations, product selection, branding, fairs, and tournament support.",
+        "SquareOne / Kahani Ratings: full-stack chess federation platform — Quarkus API (Java 21), Angular SSR, Keycloak OIDC, Flyway/PostgreSQL, and ranking jobs; security hardening, atomic FIDE sync with distributed lock, optimistic locking, email outbox, and 83 backend tests; public product at ratings.kahani.com.py.",
+        "Dompir: Strangler Fig migration of a Java EE ERP/POS (8 client forks) into a Spring Boot 4 + Angular 21 multi-tenant backend; verified pilot ETL (3,317 sales, 0 differences, identical checksums across 3 runs).",
+        "Zentra (modular Quarkus + Angular ERP, DNIT sync with Fastify/Redis, Python GIS API) and Venta Blitz (JHipster + Flutter app), deployed with Docker Compose and Dokploy.",
       ],
     },
   },
   {
-    company: {
-      es: "Consultoría de software",
-      en: "Software consulting",
-    },
+    company: { es: "UCOM Universidad Comunera", en: "UCOM Universidad Comunera" },
     role: {
-      es: "Desarrollador full stack / arquitecto",
-      en: "Full-stack developer / architect",
+      es: "Docente universitario",
+      en: "University lecturer",
     },
-    period: {
-      es: "2018 — 2019",
-      en: "2018 — 2019",
-    },
+    period: { es: "sep 2023 \u2014 presente", en: "Sep 2023 \u2014 present" },
     highlights: {
       es: [
-        "Modelado de dominios, APIs y soluciones web para clientes corporativos.",
+        "Talleres prácticos de desarrollo backend, frontend y mobile con Java, Node.js, React, Angular y Flutter.",
+        "Principios de arquitectura y experiencia real de ingeniería para acercar a los estudiantes a la toma de decisiones profesional.",
       ],
       en: [
-        "Domain modeling, APIs, and web solutions for enterprise clients.",
+        "Teach hands-on backend, frontend, and mobile development workshops using Java, Node.js, React, Angular, and Flutter.",
+        "Share architecture principles and real-world engineering experience to expose students to professional decision-making and development practices.",
+      ],
+    },
+  },
+  {
+    company: { es: "Konecta Software Factory", en: "Konecta Software Factory" },
+    role: {
+      es: "Arquitecto de software",
+      en: "Software Architect",
+    },
+    period: { es: "may 2023 \u2014 jul 2024", en: "May 2023 \u2014 Jul 2024" },
+    highlights: {
+      es: [
+        "Investigación y selección de tecnologías para la arquitectura base de un CRM modular con microservicios Jakarta EE, React, API Gateway y PostgreSQL.",
+        "Definición de límites de dominio, contratos de integración y estrategias de despliegue independiente para una evolución incremental.",
+      ],
+      en: [
+        "Researched and selected technologies for the foundational architecture of a modular CRM using Jakarta EE microservices, React, an API Gateway, and PostgreSQL.",
+        "Defined domain boundaries, integration contracts, and independent deployment strategies to support incremental evolution and technical autonomy.",
+      ],
+    },
+  },
+  {
+    company: { es: "Fintech Innovación", en: "Fintech Innovación" },
+    role: {
+      es: "Líder de equipo",
+      en: "Team Leader",
+    },
+    period: { es: "abr 2022 \u2014 abr 2023", en: "Apr 2022 \u2014 Apr 2023" },
+    highlights: {
+      es: [
+        "Gestión del equipo como Scrum Master y liderazgo de productos de facturación electrónica (SIFEN) y pago de facturas.",
+        "Soluciones con Node.js, TypeScript, Prisma, XML, React, React Native, GraphQL y PostgreSQL; notificaciones Firebase y despliegues en GCP con Jenkins.",
+      ],
+      en: [
+        "Managed the development team as Scrum Master and led electronic invoicing (SIFEN) and bill-payment products.",
+        "Designed solutions using Node.js, TypeScript, Prisma, XML, React, React Native, GraphQL, and PostgreSQL; implemented Firebase notifications and GCP deployments with Jenkins.",
+      ],
+    },
+  },
+  {
+    company: { es: "Personal Paraguay", en: "Personal Paraguay" },
+    role: {
+      es: "Analista de desarrollo de sistemas de gestión",
+      en: "Management Systems Development Analyst",
+    },
+    period: { es: "abr 2021 \u2014 abr 2022", en: "Apr 2021 \u2014 Apr 2022" },
+    highlights: {
+      es: [
+        "Análisis de requerimientos, planificación de entregas y coordinación de recursos tercerizados para funcionalidades de un CRM corporativo.",
+        "Mejoras con AngularJS, Java EE, MyBatis y PostgreSQL, con apoyo en el pase a producción.",
+      ],
+      en: [
+        "Analyzed requirements, planned delivery schedules, and coordinated outsourced resources for the development and implementation of corporate CRM features.",
+        "Developed enhancements with AngularJS, Java EE, MyBatis, and PostgreSQL, supporting their rollout to production.",
+      ],
+    },
+  },
+  {
+    company: { es: "Konecta Software Factory", en: "Konecta Software Factory" },
+    role: {
+      es: "Desarrollador de software",
+      en: "Software Developer",
+    },
+    period: { es: "ene 2017 \u2014 mar 2021", en: "Jan 2017 \u2014 Mar 2021" },
+    highlights: {
+      es: [
+        "Desarrollo y optimización de aplicaciones CRM y servicios backend con Java EE, Spring Boot, JPA, MyBatis, AngularJS, Angular y PostgreSQL.",
+        "Iniciativas de infraestructura y automatización con Docker, Rocket.Chat, Zimbra y scripts de entorno de desarrollo.",
+      ],
+      en: [
+        "Developed and optimized CRM applications and backend services with Java EE, Spring Boot, JPA, MyBatis, AngularJS, Angular, and PostgreSQL.",
+        "Contributed to infrastructure and automation initiatives using Docker, Rocket.Chat, Zimbra, and scripts for development environment setup.",
       ],
     },
   },
@@ -116,14 +164,25 @@ export const cvExperience: CvExperienceEntry[] = [
 export const cvEducation: CvEducationEntry[] = [
   {
     institution: {
-      es: "Formación universitaria (detalle bajo solicitud)",
-      en: "University education (details on request)",
+      es: "Universidad Nacional de Asunción",
+      en: "National University of Asunción",
     },
     degree: {
-      es: "Ingeniería / sistemas — completar según CV oficial",
-      en: "Engineering / systems — complete per official CV",
+      es: "Licenciatura en Ciencias de la Informática, énfasis en Análisis de Sistemas",
+      en: "Bachelor's Degree in Computer Science, emphasis in Systems Analysis",
     },
-    year: "—",
+    year: "2014 — 2021",
+  },
+  {
+    institution: {
+      es: "Universidad Nacional de Asunción",
+      en: "National University of Asunción",
+    },
+    degree: {
+      es: "Licenciatura en Ciencias de la Informática, énfasis en Programación",
+      en: "Bachelor's Degree in Computer Science, emphasis in Computer Programming",
+    },
+    year: "2014 — 2021",
   },
 ];
 
@@ -145,7 +204,7 @@ export const cvFeaturedProjects: CvFeaturedProject[] = [
       es: "Diseñé y consolidé un ecosistema digital moderno: rankings, clubes, transferencias y torneos con identidad OIDC, persistencia relacional y sincronización con fuentes externas de ratings; endurecí seguridad, integridad (sync FIDE atómico, bloqueo optimista) y confiabilidad (outbox de correo, Problem Details).",
       en: "Architected a modern digital ecosystem for federations—rankings, clubs, transfers, and tournaments with OIDC identity, relational persistence, and ingestion from external rating sources; hardened security, integrity (atomic FIDE sync, optimistic locking), and reliability (email outbox, Problem Details).",
     },
-    externalUrl: "https://squareone.kahani.dev/",
+    externalUrl: "https://ratings.kahani.com.py/",
     portfolioSlug: "squareone-paraguay-ranking-plataforma",
     referenceYear: 2025,
   },

@@ -1,31 +1,23 @@
-export type SkillCategoryId = "frontend" | "backend" | "architecture" | "devops";
+export type SkillCategoryId = "core" | "architecture" | "platform" | "frontend";
 
+/** Orden intencional: backend e ingeniería primero, frontend al final. */
 export const skillCategories: {
   id: SkillCategoryId;
   skills: string[];
 }[] = [
   {
-    id: "frontend",
-    skills: [
-      "Angular",
-      "React",
-      "Flutter",
-      "PrimeNG",
-      "Tailwind CSS",
-      "TypeScript",
-      "UX/UI",
-    ],
-  },
-  {
-    id: "backend",
+    id: "core",
     skills: [
       "Java",
       "Spring Boot",
       "Quarkus",
       "Node.js",
+      "PostgreSQL",
+      "Oracle",
       "REST APIs",
       "GraphQL",
       "JPA / Hibernate",
+      "Sistemas distribuidos",
     ],
   },
   {
@@ -33,15 +25,17 @@ export const skillCategories: {
     skills: [
       "Microservicios",
       "Arquitectura modular",
-      "Event-driven architecture",
       "API Gateway",
+      "BFF",
+      "Event-driven architecture",
+      "OIDC / Keycloak",
       "Integraciones SOAP/REST",
       "Diseño de bases de datos",
       "Patrones de diseño",
     ],
   },
   {
-    id: "devops",
+    id: "platform",
     skills: [
       "Docker",
       "Docker Compose",
@@ -49,12 +43,23 @@ export const skillCategories: {
       "Traefik",
       "Jenkins",
       "GitLab CI/CD",
-      "PostgreSQL",
-      "Oracle",
-      "Redis",
-      "MinIO",
       "Prometheus",
       "Grafana",
+      "Redis",
+      "MinIO",
+    ],
+  },
+  {
+    id: "frontend",
+    skills: [
+      "Angular",
+      "React",
+      "Next.js",
+      "Flutter",
+      "PrimeNG",
+      "Tailwind CSS",
+      "TypeScript",
+      "UX/UI",
     ],
   },
 ];

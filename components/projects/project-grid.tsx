@@ -52,8 +52,8 @@ export function ProjectGridWithFilters({ initialTipo }: ProjectGridWithFiltersPr
   }, []);
 
   const filtered = useMemo(() => {
-    if (tipo === "all") return projects;
-    return projects.filter((p) => p.type === tipo);
+    const list = tipo === "all" ? projects : projects.filter((p) => p.type === tipo);
+    return [...list].sort((a, b) => Number(Boolean(b.caseStudy)) - Number(Boolean(a.caseStudy)));
   }, [tipo]);
 
   const setFilter = useCallback(
@@ -95,6 +95,7 @@ export function ProjectGridWithFilters({ initialTipo }: ProjectGridWithFiltersPr
             stackLabel={t("stackLabel")}
             viewDetail={t("viewDetail")}
             typeLabel={typeLabel}
+            caseStudyLabel={t("caseStudy")}
           />
         ))}
       </div>

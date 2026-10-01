@@ -12,10 +12,7 @@ export const projects: ProjectEntry[] = [
       "API Gateway",
     ],
     image: "/placeholders/crm.svg",
-    links: {
-      readme: "https://github.com",
-      docs: "https://github.com",
-    },
+    links: {},
     title: {
       es: "Plataforma CRM modular",
       en: "Modular CRM platform",
@@ -74,7 +71,7 @@ export const projects: ProjectEntry[] = [
     type: "fullstack",
     stack: ["Node.js", "TypeScript", "Prisma", "XML", "PostgreSQL"],
     image: "/placeholders/invoice.svg",
-    links: { github: "https://github.com" },
+    links: {},
     title: {
       es: "Facturación electrónica (SIFEN)",
       en: "Electronic invoicing (SIFEN)",
@@ -119,6 +116,34 @@ export const projects: ProjectEntry[] = [
       es: "Servicios de facturación",
       en: "Invoicing services",
     },
+    caseStudy: {
+      constraints: {
+        es: [
+          "Dominio regulado y cambiante: esquemas XML y reglas fiscales que pueden modificarse.",
+          "Integración con una autoridad externa que puede fallar o responder tarde.",
+          "Trazabilidad y auditoría de cada documento emitido.",
+        ],
+        en: [
+          "A regulated, evolving domain: XML schemas and tax rules that can change.",
+          "Integration with an external authority that can fail or respond late.",
+          "Traceability and auditing of every issued document.",
+        ],
+      },
+      keyDecisions: {
+        es: [
+          "TypeScript de punta a punta y Prisma para contratos de datos explícitos ante cambios normativos.",
+          "Persistencia desacoplada de las integraciones, para absorber cambios regulatorios sin tocar el modelo.",
+          "Reintentos y colas en el envío, con correlación de errores para diagnosticar fallos.",
+          "Pipeline de generación, validación, firma digital y envío de XML con registro de estado y auditoría.",
+        ],
+        en: [
+          "End-to-end TypeScript with Prisma for explicit data contracts during regulatory changes.",
+          "Persistence decoupled from integrations, so regulatory changes do not touch the data model.",
+          "Retries and queues on submission, with error correlation to diagnose failures.",
+          "XML generation, validation, digital signing, and submission pipeline with state tracking and auditing.",
+        ],
+      },
+    },
     mermaid: `flowchart TD
   A[Pedido de documento] --> B[Validación]
   B --> C[Firma XML]
@@ -131,7 +156,7 @@ export const projects: ProjectEntry[] = [
     type: "devops",
     stack: ["Docker", "Kubernetes", "Traefik", "Prometheus", "Grafana"],
     image: "/placeholders/k8s.svg",
-    links: { readme: "https://github.com" },
+    links: {},
     title: {
       es: "Infraestructura Docker / Kubernetes",
       en: "Docker / Kubernetes infrastructure",
@@ -176,10 +201,44 @@ export const projects: ProjectEntry[] = [
       es: "Cluster observado",
       en: "Observed cluster",
     },
+    caseStudy: {
+      constraints: {
+        es: [
+          "Alta disponibilidad razonable sin sobrecargar la operación con tooling pesado.",
+          "Recursos acotados: clústeres ligeros en lugar de plataformas gestionadas completas.",
+          "Visibilidad homogénea entre servicios distintos.",
+        ],
+        en: [
+          "Reasonable high availability without burdening operations with heavy tooling.",
+          "Limited resources: lightweight clusters instead of full managed platforms.",
+          "Uniform visibility across different services.",
+        ],
+      },
+      keyDecisions: {
+        es: [
+          "K3s/MicroK8s como orquestador liviano cuando existe necesidad real de orquestación; Docker Compose para despliegues pequeños.",
+          "Traefik como ingress único con ruteo TLS centralizado.",
+          "Manifiestos declarativos, listos para GitOps.",
+          "Métricas estándar con Prometheus y dashboards en Grafana por namespace/servicio, para alertas homogéneas.",
+          "CI/CD con Jenkins o GitLab CI/CD que construye, prueba y despliega imágenes versionadas.",
+        ],
+        en: [
+          "K3s/MicroK8s as a lightweight orchestrator when orchestration is truly needed; Docker Compose for small deployments.",
+          "Traefik as a single ingress with centralized TLS routing.",
+          "Declarative, GitOps-ready manifests.",
+          "Standard metrics with Prometheus and Grafana dashboards per namespace/service, for uniform alerting.",
+          "CI/CD with Jenkins or GitLab CI/CD building, testing, and deploying versioned images.",
+        ],
+      },
+    },
     mermaid: `flowchart LR
-  U[Usuarios] --> T[Traefik Ingress]
-  T --> P1[Pod Servicio A]
-  T --> P2[Pod Servicio B]
+  CI[Jenkins / GitLab CI] --> IMG[Imagenes versionadas]
+  IMG --> K
+  U[Usuarios] --> T[Traefik Ingress TLS]
+  subgraph K[Cluster K3s / MicroK8s]
+    T --> P1[Pod Servicio A]
+    T --> P2[Pod Servicio B]
+  end
   P1 --> M[Prometheus]
   P2 --> M
   M --> G[Grafana]`,
@@ -189,7 +248,7 @@ export const projects: ProjectEntry[] = [
     type: "fullstack",
     stack: ["Next.js", "React", "Node.js", "PostgreSQL"],
     image: "/placeholders/chess.svg",
-    links: { demo: "https://example.com" },
+    links: {},
     title: {
       es: "Kahani — experiencias de ajedrez",
       en: "Kahani — chess experiences",
@@ -240,7 +299,7 @@ export const projects: ProjectEntry[] = [
     type: "devops",
     stack: ["Jenkins", "Docker", "GCP", "CI/CD"],
     image: "/placeholders/cicd.svg",
-    links: { docs: "https://github.com" },
+    links: {},
     title: {
       es: "Pipeline CI/CD (Jenkins + GCP)",
       en: "CI/CD pipeline (Jenkins + GCP)",
@@ -377,8 +436,8 @@ export const projects: ProjectEntry[] = [
       en: "Quarkus for JVM productivity and Angular for experienced front teams; independent repos coordinated from the workspace layout.",
     },
     benefitSummary: {
-      es: "Base repetible para dominios de negocio sin arrastrar un monolito difícil de desplegar.",
-      en: "A repeatable base for business domains without a hard-to-deploy monolith.",
+      es: "Base repetible para nuevos dominios de negocio sin un monolito difícil de desplegar; datos fiscales y geográficos consultables sin acoplar el núcleo a la fuente externa.",
+      en: "A repeatable base for new business domains without a hard-to-deploy monolith; tax and geographic data queryable without coupling the core to the external source.",
     },
     flowSummary: {
       es: "SPA Angular → API Quarkus → PostgreSQL; integración con geo, clientes DNIT y ecommerce según despliegue.",
@@ -392,6 +451,45 @@ export const projects: ProjectEntry[] = [
       es: "ERP modular Zentra",
       en: "Modular Zentra ERP",
     },
+    caseStudy: {
+      constraints: {
+        es: [
+          "Varios dominios de negocio sobre una misma base repetible, sin arrastrar un monolito difícil de desplegar.",
+          "Datos fiscales (DNIT) y geográficos que vienen de fuentes externas y deben consultarse con baja latencia.",
+          "Despliegue por componente en hosting gestionado (Docker Compose / Dokploy).",
+        ],
+        en: [
+          "Several business domains on one repeatable base, without dragging along a hard-to-deploy monolith.",
+          "Tax (DNIT) and geographic data from external sources that must be queried with low latency.",
+          "Per-component deployment on managed hosting (Docker Compose / Dokploy).",
+        ],
+      },
+      keyDecisions: {
+        es: [
+          "Quarkus por productividad JVM y Angular (PrimeNG) para la SPA de administración, en repositorios independientes.",
+          "Recursos y repositorios genéricos para sumar entidades sin duplicar código.",
+          "Migraciones Flyway versionadas sobre PostgreSQL.",
+          "Servicios especializados desacoplados del núcleo: sincronización DNIT (Fastify) y GIS (Python sobre GeoPackage); Redis solo como acelerador de lectura.",
+          "Imágenes Docker versionadas con un script unificado de build/push por servicio.",
+        ],
+        en: [
+          "Quarkus for JVM productivity and Angular (PrimeNG) for the admin SPA, in independent repositories.",
+          "Generic resources and repositories to add entities without duplicating code.",
+          "Versioned Flyway migrations on PostgreSQL.",
+          "Specialized services decoupled from the core: DNIT sync (Fastify) and GIS (Python on GeoPackage); Redis only as a read accelerator.",
+          "Versioned Docker images with a unified per-service build/push script.",
+        ],
+      },
+    },
+    mermaid: `flowchart LR
+  U[Usuario] --> A[Angular SPA]
+  A --> Q[Quarkus API]
+  Q --> P[(PostgreSQL)]
+  Q --> G[API GIS Python]
+  G --> GP[(GeoPackage)]
+  F[Fastify sync DNIT] --> P
+  F -.cache.-> R[(Redis)]
+  D[DNIT] --> F`,
   },
   {
     slug: "zentra-api-clientes-dnit",
@@ -603,7 +701,7 @@ export const projects: ProjectEntry[] = [
     stack: ["Quarkus", "Angular", "Keycloak", "PostgreSQL", "Python", "FastAPI"],
     image: "/placeholders/squareone-clubs.svg",
     links: {
-      demo: "https://squareone.kahani.dev/",
+      demo: "https://ratings.kahani.com.py/",
     },
     title: {
       es: "SquareOne — ranking oficial, jugadores y federación",
@@ -640,8 +738,8 @@ export const projects: ProjectEntry[] = [
       en: "Public tier for SEO and discovery plus a stable JVM API for federation rules; isolated Python for heavy ETL/scraping workloads.",
     },
     benefitSummary: {
-      es: "Superficie única para visitantes (rankings/jugadores en squareone.kahani.dev) y operación interna versionada con imágenes Docker alineadas (API, web, scraper).",
-      en: "One surface for visitors (rankings/players on squareone.kahani.dev) and version-aligned Docker images for backend, web, and scraper.",
+      es: "Superficie única para visitantes (rankings/jugadores en ratings.kahani.com.py) y operación interna, con 83 pruebas de backend, 35 migraciones Flyway aplicables desde cero e imágenes Docker alineadas (API, web, scraper).",
+      en: "One surface for visitors (rankings/players on ratings.kahani.com.py) and internal operations, with 83 backend tests, 35 Flyway migrations applicable from scratch, and version-aligned Docker images (API, web, scraper).",
     },
     flowSummary: {
       es: "Visitante → portal SSR; operador OIDC → Angular → Quarkus → PostgreSQL; jobs FIDE actualizan el esquema de ratings y clubes.",
@@ -655,6 +753,45 @@ export const projects: ProjectEntry[] = [
       es: "Portal + plataforma federativa",
       en: "Portal + federation platform",
     },
+    caseStudy: {
+      constraints: {
+        es: [
+          "Experiencia pública indexable (SEO) y trámites federativos protegidos en un mismo producto.",
+          "Datos FIDE externos que cambian y deben ingerirse sin corromper el estado ni con ejecuciones concurrentes.",
+          "Datos personales de jugadores con visibilidad distinta según el rol (federación, club, árbitro, jugador).",
+        ],
+        en: [
+          "A public, indexable (SEO) experience and protected federation workflows in a single product.",
+          "External FIDE data that changes and must be ingested without corrupting state, even with concurrent runs.",
+          "Player personal data with different visibility per role (federation, club, arbiter, player).",
+        ],
+      },
+      keyDecisions: {
+        es: [
+          "Capa pública SSR separada de la API JVM con las reglas federativas; Python aislado para ETL y scraping.",
+          "Identidad con Keycloak (OIDC + PKCE) y autorización por objeto según rol y alcance del club.",
+          "Publicación FIDE atómica (staging, un solo commit, rollback con registro FAILED) protegida por un lock distribuido con lease, heartbeat y fencing.",
+          "Bloqueo optimista con If-Match (409/412/428) en jugadores, transferencias, afiliaciones, invitaciones e inscripciones.",
+          "Outbox transaccional de correo con reintento exponencial e idempotencia; errores RFC 9457 con X-Request-ID y DTO por audiencia para minimizar datos personales.",
+        ],
+        en: [
+          "SSR public tier separated from the JVM API holding the federation rules; Python isolated for ETL and scraping.",
+          "Identity with Keycloak (OIDC + PKCE) and object-level authorization by role and club scope.",
+          "Atomic FIDE publication (staging, single commit, rollback with a FAILED record) guarded by a distributed lock with lease, heartbeat, and fencing.",
+          "Optimistic locking with If-Match (409/412/428) on players, transfers, affiliations, invitations, and enrollments.",
+          "Transactional email outbox with exponential retry and idempotency; RFC 9457 errors with X-Request-ID and per-audience DTOs to minimize personal data.",
+        ],
+      },
+    },
+    mermaid: `flowchart LR
+  V[Visitante] --> W[Angular SSR]
+  O[Operador] --> K[Keycloak OIDC]
+  K --> W
+  W --> Q[Quarkus API]
+  Q --> P[(PostgreSQL)]
+  S[fide-Scraper Python] --> P
+  FIDE[Listas FIDE] --> S
+  Q --> M[Outbox de correo]`,
   },
   {
     slug: "dompir-erp-pos-multitenant",
@@ -709,6 +846,36 @@ export const projects: ProjectEntry[] = [
     architectureName: {
       es: "Strangler Fig multi-tenant",
       en: "Multi-tenant Strangler Fig",
+    },
+    caseStudy: {
+      constraints: {
+        es: [
+          "El legado no tenía autenticación real ni control de versiones y vivía en forks por cliente.",
+          "La migración no podía congelar la operación: módulo por módulo, con paridad medible.",
+          "Datos reales de clientes que no pueden entrar al repositorio ni usarse sin anonimizar.",
+        ],
+        en: [
+          "The legacy had no real authentication or version control and lived in per-client forks.",
+          "The migration could not freeze operations: module by module, with measurable parity.",
+          "Real client data that cannot enter the repository or be used without anonymization.",
+        ],
+      },
+      keyDecisions: {
+        es: [
+          "Strangler Fig por módulos, con un único backend multi-tenant diferenciado por tenant, configuración y feature flags.",
+          "Autenticación JWT real, aislamiento por X-Tenant-Id y errores uniformes.",
+          "MyBatis para conservar control explícito sobre el SQL heredado; dinero siempre en BigDecimal y calculado solo en el backend.",
+          "ETL idempotente en un PostgreSQL descartable, con datos personales anonimizados y abortando ante códigos sin mapeo.",
+          "Conciliación por conteos, sumas y checksums, más una matriz de paridad legado vs. nuevo.",
+        ],
+        en: [
+          "Strangler Fig per module, with a single multi-tenant backend differentiated by tenant, configuration, and feature flags.",
+          "Real JWT authentication, isolation via X-Tenant-Id, and uniform errors.",
+          "MyBatis to keep explicit control over the inherited SQL; money always BigDecimal and calculated only in the backend.",
+          "Idempotent ETL in a disposable PostgreSQL, with personal data anonymized and aborting on unmapped codes.",
+          "Reconciliation via counts, sums, and checksums, plus a legacy-vs-new parity matrix.",
+        ],
+      },
     },
     mermaid: `flowchart LR
   L[Legado Java EE + dump] --> E[ETL anonimizado]

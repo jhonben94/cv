@@ -6,7 +6,7 @@ import { AboutSection } from "@/components/sections/about-section";
 import { SkillsSection } from "@/components/sections/skills-section";
 import { AiSection } from "@/components/sections/ai-section";
 import { ArchitecturesSection } from "@/components/sections/architectures-section";
-import { CertificationsSection } from "@/components/sections/certifications-section";
+import { DecisionsSection } from "@/components/sections/decisions-section";
 import { ProjectsSection } from "@/components/sections/projects-section";
 import { JsonLdPerson } from "@/components/seo/json-ld-person";
 import { SectionSkeleton } from "@/components/ui/content-skeleton";
@@ -57,10 +57,10 @@ export default async function HomePage({ searchParams }: Props) {
         <ArchitecturesSection />
       </Suspense>
       <Suspense fallback={<SectionSkeleton />}>
-        <ProjectsSection initialTipo={sp.tipo} />
+        <DecisionsSection />
       </Suspense>
       <Suspense fallback={<SectionSkeleton />}>
-        <CertificationsSection />
+        <ProjectsSection initialTipo={sp.tipo} />
       </Suspense>
     </>
   );

@@ -8,7 +8,7 @@ export function JsonLdPerson() {
     email: siteConfig.email,
     url: siteConfig.siteUrl,
     sameAs: [siteConfig.github, siteConfig.linkedin],
-    jobTitle: "Full Stack Developer, Software Architect",
+    jobTitle: "Senior Software Engineer, Technical Lead, Software Architect",
   };
 
   return (

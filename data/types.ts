@@ -18,6 +18,12 @@ export type ProjectLinks = {
   diagram?: string;
 };
 
+/** Estructura de caso de estudio (Problema → Restricciones → Arquitectura → Decisiones → Resultado). */
+export type ProjectCaseStudy = {
+  constraints: Localized<string[]>;
+  keyDecisions: Localized<string[]>;
+};
+
 export type ProjectEntry = {
   slug: string;
   type: ProjectType;
@@ -34,6 +40,8 @@ export type ProjectEntry = {
   flowSummary: Localized<string>;
   componentsSummary: Localized<string>;
   architectureName: Localized<string>;
+  /** Presente solo en los casos destacados. */
+  caseStudy?: ProjectCaseStudy;
   mermaid?: string;
   diagramImage?: string;
 };

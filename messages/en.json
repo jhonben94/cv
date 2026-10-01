@@ -1,7 +1,7 @@
 {
   "meta": {
     "siteName": "Jhony Benítez — Portfolio",
-    "siteDescription": "Full Stack Developer, Software Architect, and DevOps. Technical portfolio with projects, architectures, and experience."
+    "siteDescription": "Senior Software Engineer, Technical Lead, and Software Architect. Production systems from architecture to deployment: Java, distributed systems, integrations, and cloud-native platforms."
   },
   "Nav": {
     "home": "Home",
@@ -10,59 +10,77 @@
     "skills": "Skills",
     "ai": "AI",
     "architectures": "Architectures",
-    "certifications": "Certifications",
     "contact": "Contact",
     "projectsFull": "All projects",
     "changelog": "Changelog",
     "openMenu": "Open menu",
-    "closeMenu": "Close"
+    "closeMenu": "Close",
+    "decisions": "Decisions"
   },
   "Hero": {
-    "role": "Full Stack Developer · Software Architect · DevOps",
-    "tagline": "I lead end-to-end products and platforms: scalable system design, full-stack delivery, and cloud operations.",
+    "role": "Senior Software Engineer · Technical Lead · Software Architect",
+    "tagline": "I design, build, and operate production systems from architecture to deployment, specializing in Java, distributed systems, integrations, and cloud-native platforms.",
     "ctaProjects": "View projects",
     "ctaCv": "Download CV",
-    "ctaCvSoonLine": "Coming soon",
-    "ctaCvSoonTitle": "CV download is coming soon — stay tuned.",
     "ctaContact": "Contact",
     "ctaGithub": "GitHub",
-    "ctaLinkedin": "LinkedIn"
+    "ctaLinkedin": "LinkedIn",
+    "subrole": "Backend · Distributed Systems · Cloud & Platform Engineering",
+    "stats": [
+      {
+        "value": "9+ years",
+        "label": "Software engineering"
+      },
+      {
+        "value": "Architecture → Production",
+        "label": "End-to-end ownership"
+      },
+      {
+        "value": "Java · Quarkus · Spring",
+        "label": "Backend specialization"
+      },
+      {
+        "value": "Docker · Kubernetes · CI/CD",
+        "label": "Platform engineering"
+      }
+    ]
   },
   "About": {
     "title": "About",
-    "p1": "Six-plus years building web applications and leading initiatives where frontend, backend, architecture, and DevOps meet. I have worked as a software architect in consulting, led teams in fintech, and currently combine senior development with university teaching and entrepreneurship (Kahani E.A.S.).",
+    "p1": "Nine-plus years building enterprise systems, integrations, and platforms, centered on Java (Spring Boot and Quarkus) with experience across frontend, mobile, and operations. I have worked as a software architect in consulting, led teams in fintech, and currently combine senior development with university teaching and entrepreneurship (Kahani E.A.S.).",
     "p2": "I focus on maintainable solutions tied to the business: clear module boundaries, explicit API contracts, observability, and repeatable deployments. I enjoy turning ambiguous requirements into designs teams can ship with confidence.",
-    "p3": "I can lead whole projects: from context diagrams and architectural decisions to CI/CD pipelines, container infrastructure, and polished user experiences."
+    "p3": "My differentiator is end-to-end technical ownership: business → requirements → architecture → backend → frontend → infrastructure → CI/CD → production. I can take a project from the context diagram all the way to running it in production."
   },
   "Ai": {
-    "title": "Artificial intelligence",
-    "subtitle": "How I integrate AI across development and product work—with engineering discipline and responsibility.",
-    "p1": "I use language models and assistant tooling as accelerators—not as a substitute for design or human review: draft code, API exploration, documentation, and test-assisted workflows.",
-    "p2": "I focus on pairing solid engineering practice with flows where AI improves repeatability and clarity: versioned prompts, context boundaries, output validation, and traceability when sensitive data is involved.",
+    "title": "AI-Augmented Software Engineering",
+    "subtitle": "How I use AI as part of the engineering workflow, with technical judgment and human review.",
+    "p1": "I work with Claude, Codex, and OpenCode as part of the development cycle, backed by Spec-Driven Development: specs and architecture come first, and agents implement against them.",
+    "p2": "AI accelerates, it does not decide: every change goes through tests and human review before reaching CI/CD, and project context lives in versioned documents inside the repository.",
+    "flowTitle": "Workflow",
+    "flow": [
+      "Requirements",
+      "Architecture / specs",
+      "Claude",
+      "Implementation (Codex / OpenCode)",
+      "Tests",
+      "Human review",
+      "CI/CD"
+    ],
     "highlights": [
-      "API design assistance, refactors, and LLM-assisted reviews with mandatory human sign-off.",
-      "Practical integrations (embeddings, lightweight RAG) when the domain warrants it and sources are trustworthy.",
-      "Trade-offs on cost, latency, and privacy: what to delegate to the model vs. rules and automated tests.",
-      "Continuous learning: tracking ecosystem changes without replacing architecture fundamentals."
+      "Spec-Driven Development: versioned specs and contracts before code.",
+      "AI-assisted code generation and architecture review with specialized agents.",
+      "Assisted testing and documentation, always with human-in-the-loop validation.",
+      "Project memory and context kept in the repository to stay coherent across sessions."
     ]
-  },
-  "Certifications": {
-    "badge": "Coming soon",
-    "title": "Certifications & courses",
-    "subtitle": "This section will list official certifications, training, and courses aligned with my stack and software architecture practice.",
-    "card1Title": "Certifications / badges",
-    "card1Hint": "Cloud, architecture, security, and best practices — details coming soon.",
-    "card2Title": "Courses & workshops",
-    "card2Hint": "Continuous learning applied to real projects — coming soon."
   },
   "Skills": {
     "title": "Technical skills",
-    "subtitle": "Stack and practices I apply in production.",
+    "subtitle": "Stack and practices I apply in production, starting with the backend core.",
     "categories": {
-      "frontend": "Frontend",
-      "backend": "Backend",
+      "core": "Core engineering",
       "architecture": "Architecture",
-      "devops": "DevOps / Infrastructure"
+      "platform": "Platform & operations",
+      "frontend": "Frontend & mobile"
     }
   },
   "Architectures": {
@@ -87,7 +105,8 @@
       "mobile": "Mobile",
       "devops": "DevOps",
       "architecture": "Architecture"
-    }
+    },
+    "caseStudy": "Case study"
   },
   "ProjectDetail": {
     "back": "Back to projects",
@@ -105,7 +124,10 @@
     "linkReadme": "README",
     "linkDocs": "Documentation",
     "linkDiagram": "Diagram",
-    "features": "Key features"
+    "features": "Key features",
+    "constraints": "Constraints",
+    "keyDecisions": "Key decisions",
+    "result": "Result"
   },
   "Footer": {
     "rights": "All rights reserved.",
@@ -121,5 +143,23 @@
     "metaDescription": "Version history and notable changes for this site (same content as CHANGELOG.md in the repo).",
     "subtitle": "Project version history; updated together with CHANGELOG.md in Git.",
     "back": "Back to home"
+  },
+  "Decisions": {
+    "title": "How I make technical decisions",
+    "subtitle": "The criteria I apply when choosing architecture and platform.",
+    "items": [
+      {
+        "title": "Microservices vs. modular monolith",
+        "body": "I start with clear domain boundaries and split services when there are operational, scalability, or ownership reasons."
+      },
+      {
+        "title": "Kubernetes vs. Docker Compose",
+        "body": "Kubernetes when there is a real need for orchestration, high availability, or multiple workloads; Compose for small deployments where operational simplicity matters more."
+      },
+      {
+        "title": "Build vs. buy",
+        "body": "I weigh operational cost, complexity, and dependency before adopting new infrastructure."
+      }
+    ]
   }
 }

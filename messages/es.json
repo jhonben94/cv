@@ -1,7 +1,7 @@
 {
   "meta": {
     "siteName": "Jhony Benítez — Portfolio",
-    "siteDescription": "Full Stack Developer, Software Architect y DevOps. Portfolio técnico con proyectos, arquitecturas y experiencia."
+    "siteDescription": "Senior Software Engineer, Technical Lead y Software Architect. Sistemas de producción de la arquitectura al despliegue: Java, sistemas distribuidos, integraciones y plataformas cloud-native."
   },
   "Nav": {
     "home": "Inicio",
@@ -10,59 +10,77 @@
     "skills": "Habilidades",
     "ai": "IA",
     "architectures": "Arquitecturas",
-    "certifications": "Certificaciones",
     "contact": "Contacto",
     "projectsFull": "Proyectos (lista)",
     "changelog": "Historial de cambios",
     "openMenu": "Abrir menú",
-    "closeMenu": "Cerrar"
+    "closeMenu": "Cerrar",
+    "decisions": "Decisiones"
   },
   "Hero": {
-    "role": "Full Stack Developer · Software Architect · DevOps",
-    "tagline": "Lidero productos y plataformas de extremo a extremo: diseño de sistemas escalables, implementación full stack y operación en cloud.",
+    "role": "Senior Software Engineer · Technical Lead · Software Architect",
+    "tagline": "Diseño, construyo y opero sistemas de producción de la arquitectura al despliegue, con foco en Java, sistemas distribuidos, integraciones y plataformas cloud-native.",
     "ctaProjects": "Ver proyectos",
     "ctaCv": "Descargar CV",
-    "ctaCvSoonLine": "Próximamente",
-    "ctaCvSoonTitle": "Estamos preparando la descarga del CV; muy pronto disponible.",
     "ctaContact": "Contactar",
     "ctaGithub": "GitHub",
-    "ctaLinkedin": "LinkedIn"
+    "ctaLinkedin": "LinkedIn",
+    "subrole": "Backend · Sistemas distribuidos · Cloud & Platform Engineering",
+    "stats": [
+      {
+        "value": "9+ años",
+        "label": "Ingeniería de software"
+      },
+      {
+        "value": "Arquitectura → Producción",
+        "label": "Ownership de punta a punta"
+      },
+      {
+        "value": "Java · Quarkus · Spring",
+        "label": "Especialización backend"
+      },
+      {
+        "value": "Docker · Kubernetes · CI/CD",
+        "label": "Platform engineering"
+      }
+    ]
   },
   "About": {
     "title": "Sobre mí",
-    "p1": "Más de seis años construyendo aplicaciones web y liderando iniciativas donde convergen frontend, backend, arquitectura y DevOps. He trabajado como arquitecto de software en entornos de consultoría, lideré equipos en fintech y actualmente combino desarrollo senior con docencia universitaria y emprendimiento (Kahani E.A.S.).",
+    "p1": "Más de nueve años construyendo sistemas empresariales, integraciones y plataformas, con un núcleo en Java (Spring Boot y Quarkus) y experiencia en frontend, mobile y operación. He trabajado como arquitecto de software en consultoría, lideré equipos en fintech y hoy combino desarrollo senior con docencia universitaria y emprendimiento (Kahani E.A.S.).",
     "p2": "Mi enfoque es entregar soluciones mantenibles y alineadas al negocio: límites claros entre módulos, contratos de API explícitos, observabilidad y despliegues repetibles. Disfruto traducir requisitos ambiguos en diseños que equipos puedan ejecutar con confianza.",
-    "p3": "Puedo liderar proyectos completos: desde el diagrama de contexto y las decisiones de arquitectura hasta pipelines CI/CD, infraestructura containerizada y experiencias de usuario pulidas."
+    "p3": "Mi diferencial es el ownership técnico de punta a punta: negocio → requisitos → arquitectura → backend → frontend → infraestructura → CI/CD → producción. Puedo llevar un proyecto completo desde el diagrama de contexto hasta su operación."
   },
   "Ai": {
-    "title": "Inteligencia artificial",
-    "subtitle": "Cómo integro IA en el ciclo de desarrollo y en producto, con criterio técnico y responsable.",
-    "p1": "Uso modelos de lenguaje y herramientas de asistencia como aceleradores —no como sustitutos del diseño ni de la revisión humana—: borradores de código, exploración de APIs, documentación y pruebas asistidas.",
-    "p2": "Me interesa combinar buenas prácticas de ingeniería con flujos donde la IA mejora repetibilidad y claridad: prompts versionados, límites de contexto, validación de salidas y trazabilidad cuando hay datos sensibles.",
+    "title": "Ingeniería de software aumentada con IA",
+    "subtitle": "Cómo uso IA como parte del flujo de ingeniería, con criterio técnico y revisión humana.",
+    "p1": "Trabajo con Claude, Codex y OpenCode como parte del ciclo de desarrollo, apoyado en desarrollo guiado por especificaciones (Spec-Driven Development): las specs y la arquitectura se definen primero, y los agentes implementan contra ellas.",
+    "p2": "La IA acelera, no decide: cada cambio pasa por pruebas y revisión humana antes de llegar a CI/CD, y el contexto del proyecto se mantiene en documentos versionados dentro del repositorio.",
+    "flowTitle": "Flujo de trabajo",
+    "flow": [
+      "Requisitos",
+      "Arquitectura / specs",
+      "Claude",
+      "Implementación (Codex / OpenCode)",
+      "Pruebas",
+      "Revisión humana",
+      "CI/CD"
+    ],
     "highlights": [
-      "Asistencia en diseño de APIs, refactor y revisiones asistidas por LLM con revisión humana.",
-      "Integraciones prácticas (embeddings, RAG ligero) cuando el dominio lo amerita y hay fuentes confiables.",
-      "Criterio sobre costos, latencia y privacidad: qué delegar al modelo y qué mantener en reglas y tests.",
-      "Formación continua: seguimiento de evolución del ecosistema sin sustituir fundamentos de arquitectura."
+      "Spec-Driven Development: specs versionadas y contratos antes del código.",
+      "Generación asistida de código y revisión de arquitectura con agentes especializados.",
+      "Pruebas y documentación asistidas, siempre con validación humana (human-in-the-loop).",
+      "Memoria y contexto de proyecto en el repositorio para mantener coherencia entre sesiones."
     ]
-  },
-  "Certifications": {
-    "badge": "Próximamente",
-    "title": "Certificaciones y cursos",
-    "subtitle": "Aquí publicaré certificaciones oficiales, formaciones y cursos relevantes al stack y a la arquitectura de software.",
-    "card1Title": "Certificaciones / badges",
-    "card1Hint": "Cloud, arquitectura, seguridad y buenas prácticas — detalle en preparación.",
-    "card2Title": "Cursos y talleres",
-    "card2Hint": "Formación continua y contenido aplicado a proyectos reales — próximamente."
   },
   "Skills": {
     "title": "Competencias técnicas",
-    "subtitle": "Stack y prácticas que aplico en producción.",
+    "subtitle": "Stack y prácticas que aplico en producción, empezando por el núcleo backend.",
     "categories": {
-      "frontend": "Frontend",
-      "backend": "Backend",
+      "core": "Ingeniería (core)",
       "architecture": "Arquitectura",
-      "devops": "DevOps / Infraestructura"
+      "platform": "Plataforma y operación",
+      "frontend": "Frontend y mobile"
     }
   },
   "Architectures": {
@@ -87,7 +105,8 @@
       "mobile": "Mobile",
       "devops": "DevOps",
       "architecture": "Arquitectura"
-    }
+    },
+    "caseStudy": "Caso de estudio"
   },
   "ProjectDetail": {
     "back": "Volver a proyectos",
@@ -105,7 +124,10 @@
     "linkReadme": "README",
     "linkDocs": "Documentación",
     "linkDiagram": "Diagrama",
-    "features": "Características principales"
+    "features": "Características principales",
+    "constraints": "Restricciones",
+    "keyDecisions": "Decisiones clave",
+    "result": "Resultado"
   },
   "Footer": {
     "rights": "Todos los derechos reservados.",
@@ -121,5 +143,23 @@
     "metaDescription": "Historial de versiones y cambios destacados del sitio; el mismo contenido que CHANGELOG.md en el repositorio.",
     "subtitle": "Se actualiza junto con CHANGELOG.md en Git al publicar una versión nueva.",
     "back": "Volver al inicio"
+  },
+  "Decisions": {
+    "title": "Cómo tomo decisiones técnicas",
+    "subtitle": "Criterios que aplico al elegir arquitectura y plataforma.",
+    "items": [
+      {
+        "title": "Microservicios vs. monolito modular",
+        "body": "Empiezo con límites de dominio claros y separo servicios cuando hay razones operativas, de escalabilidad o de ownership."
+      },
+      {
+        "title": "Kubernetes vs. Docker Compose",
+        "body": "Kubernetes cuando existe una necesidad real de orquestación, alta disponibilidad o múltiples workloads; Compose para despliegues pequeños donde pesa más la simplicidad operacional."
+      },
+      {
+        "title": "Construir vs. adoptar",
+        "body": "Evalúo costo operacional, complejidad y dependencia antes de incorporar infraestructura nueva."
+      }
+    ]
   }
 }

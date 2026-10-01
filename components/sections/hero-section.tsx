@@ -8,6 +8,7 @@ export async function HeroSection() {
   const t = await getTranslations("Hero");
   const locale = await getLocale();
   const cvEnabled = isCvDownloadEnabled();
+  const stats = t.raw("stats") as { value: string; label: string }[];
   const cvPdfHref = `/api/cv/pdf?lang=${locale}`;
 
   return (
@@ -32,6 +33,9 @@ export async function HeroSection() {
           <h1 className="font-heading text-3xl font-bold leading-tight text-[var(--color-text)] md:text-4xl lg:text-5xl">
             {t("role")}
           </h1>
+          <p className="font-heading text-base font-medium text-[var(--color-primary)] md:text-lg">
+            {t("subrole")}
+          </p>
           <p className="max-w-2xl text-lg text-[var(--color-muted)] md:text-xl">
             {t("tagline")}
           </p>
@@ -54,21 +58,7 @@ export async function HeroSection() {
                 <Download className="h-4 w-4" aria-hidden />
                 {t("ctaCv")}
               </a>
-            ) : (
-              <button
-                type="button"
-                disabled
-                title={t("ctaCvSoonTitle")}
-                aria-label={`${t("ctaCv")}. ${t("ctaCvSoonTitle")}`}
-                className="inline-flex cursor-not-allowed items-center gap-2 rounded-[var(--radius-btn)] border-2 border-dashed border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-3 text-sm text-[var(--color-muted)] opacity-95"
-              >
-                <Download className="h-4 w-4 shrink-0 opacity-70" aria-hidden />
-                <span className="font-semibold">{t("ctaCv")}</span>
-                <span className="rounded-full border border-[var(--color-primary)]/35 bg-[var(--color-primary)]/10 px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-[var(--color-primary)]">
-                  {t("ctaCvSoonLine")}
-                </span>
-              </button>
-            )}
+            ) : null}
             <a
               href={`mailto:${siteConfig.email}`}
               className="inline-flex cursor-pointer items-center gap-2 rounded-[var(--radius-btn)] border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-sm font-medium text-[var(--color-text)] transition hover:border-[var(--color-primary)]"
@@ -95,6 +85,17 @@ export async function HeroSection() {
               {t("ctaLinkedin")}
             </a>
           </div>
+          <dl className="grid grid-cols-2 gap-3 pt-2 text-left lg:grid-cols-4">
+            {stats.map((s) => (
+              <div
+                key={s.value}
+                className="rounded-[var(--radius-card)] border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2.5 shadow-[var(--shadow-sm)]"
+              >
+                <dt className="font-heading text-sm font-bold text-[var(--color-text)]">{s.value}</dt>
+                <dd className="mt-0.5 text-xs text-[var(--color-muted)]">{s.label}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </section>

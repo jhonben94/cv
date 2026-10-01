@@ -12,6 +12,7 @@ type Props = {
   stackLabel: string;
   viewDetail: string;
   typeLabel: (type: ProjectEntry["type"]) => string;
+  caseStudyLabel: string;
 };
 
 export function ProjectCard({
@@ -20,6 +21,7 @@ export function ProjectCard({
   stackLabel,
   viewDetail,
   typeLabel,
+  caseStudyLabel,
 }: Props) {
   const locale = useLocale() as "es" | "en";
   const title = project.title[locale];
@@ -46,6 +48,11 @@ export function ProjectCard({
         <span className="absolute left-3 top-3 rounded-full bg-[var(--color-primary)] px-2.5 py-0.5 text-xs font-semibold text-white">
           {typeLabel(project.type)}
         </span>
+        {project.caseStudy ? (
+          <span className="absolute right-3 top-3 rounded-full border border-[var(--color-cta)] bg-[var(--color-surface)] px-2.5 py-0.5 text-xs font-semibold text-[var(--color-cta)]">
+            {caseStudyLabel}
+          </span>
+        ) : null}
       </div>
       <div className="flex flex-1 flex-col gap-3 p-5">
         <h3 className="font-heading text-lg font-semibold text-[var(--color-text)]">

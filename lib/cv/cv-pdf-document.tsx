@@ -155,16 +155,16 @@ const copy: Record<
 
 const skillLabels: Record<Lang, Record<SkillCategoryId, string>> = {
   es: {
-    frontend: "Frontend",
-    backend: "Backend",
+    core: "Ingeniería (core)",
     architecture: "Arquitectura",
-    devops: "DevOps / Infraestructura",
+    platform: "Plataforma y operación",
+    frontend: "Frontend y mobile",
   },
   en: {
-    frontend: "Frontend",
-    backend: "Backend",
+    core: "Core engineering",
     architecture: "Architecture",
-    devops: "DevOps / Infrastructure",
+    platform: "Platform & operations",
+    frontend: "Frontend & mobile",
   },
 };
 
@@ -235,7 +235,7 @@ function resolveFeaturedLink(
   const base = siteUrl.replace(/\/$/, "");
   if (p.externalUrl?.trim()) return p.externalUrl.trim();
   if (p.portfolioSlug?.trim()) {
-    return `${base}/${lang}/proyectos/${p.portfolioSlug.trim()}`;
+    return `${base}/${lang}/proyectos/${p.portfolioSlug.trim()}#arquitectura`;
   }
   return undefined;
 }

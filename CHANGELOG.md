@@ -16,6 +16,32 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 ---
 
+## [0.3.0] - 2026-09-30
+
+Reposicionamiento senior/lead del portfolio: casos de estudio, sección de decisiones técnicas y CV descargable con datos reales.
+
+### Añadido
+- Ancla `#arquitectura` en la ficha de proyecto (`/[locale]/proyectos/[slug]`), para enlazar directo a la sección de arquitectura.
+- **Casos de estudio** con estructura Problema → Restricciones → Arquitectura → Decisiones clave → Resultado (`caseStudy` en `data/types.ts`) para Zentra, SquareOne, SIFEN, Infraestructura y Dompir; insignia "Caso de estudio" y orden prioritario en el listado. Diagramas nuevos en Zentra y SquareOne, y de despliegue (CI/CD → clúster → Prometheus/Grafana) en Infraestructura.
+- Sección **"Cómo tomo decisiones técnicas"** (microservicios vs. monolito modular, Kubernetes vs. Compose, construir vs. adoptar).
+- Indicadores en el hero (años, ownership, especialización backend, platform engineering) y subtítulo de posicionamiento.
+
+### Cambiado
+- **Posicionamiento**: hero, descripción del sitio, JSON-LD y "Sobre mí" pasan a *Senior Software Engineer · Technical Lead · Software Architect*, con énfasis en ownership técnico de punta a punta y 9+ años.
+- **Competencias**: orden Ingeniería (core) → Arquitectura → Plataforma y operación → Frontend y mobile (backend primero); añadidos BFF, OIDC/Keycloak, Next.js y sistemas distribuidos.
+- **IA**: la sección pasa a *AI-Augmented Software Engineering*, con el flujo Requisitos → specs → Claude → Codex/OpenCode → pruebas → revisión humana → CI/CD.
+- **Docker**: `NEXT_PUBLIC_*` (dominio, contacto, Umami) se reciben como `ARG` en el build, con `https://jhonybenitez.dev` por defecto; `build-image.sh` los pasa como `--build-arg`. Antes el sitio salía con `localhost:3000` incrustado.
+- **Botón "Descargar CV"** habilitado por defecto; `CV_DOWNLOAD_ENABLED=false` lo oculta (antes había que activarlo con `true`).
+- **CV en PDF** (`data/cv.ts`): experiencia y educación reemplazadas por los datos reales (antes eran texto de relleno) e inclusión de Dompir y de las mejoras de SquareOne.
+- **SquareOne / Kahani Ratings**: el enlace público pasa de `squareone.kahani.dev` a **https://ratings.kahani.com.py/** en `data/cv.ts` y `data/projects.ts` (enlaces y textos).
+- **Proyectos privados** (sin demo pública): en el CV en PDF apuntan a la ficha del proyecto en el sitio, directo a su sección de arquitectura (`…/proyectos/<slug>#arquitectura`).
+
+### Eliminado
+- Sección **Certificaciones** (estaba vacía, "próximamente") y su entrada de navegación; el estado "Próximamente" del botón de CV.
+- Enlaces de relleno (`github.com`, `example.com`) en proyectos privados de `data/projects.ts`; ya no se muestra la sección de enlaces donde no hay URL real.
+
+---
+
 ## [0.2.3] - 2026-09-30
 
 Nuevo caso **Dompir**, mejoras de SquareOne en el CV y portfolio, analítica opcional y tarjetas Open Graph dinámicas.
@@ -82,12 +108,13 @@ Primera versión publicable del sitio: portfolio técnico con i18n, casos de est
 1. El remoto del proyecto es `https://github.com/jhonben94/cv.git` (rama por defecto según configuración del repo; suele ser `master` o `main`).
 2. Etiqueta esta versión alinearla con el changelog:
    ```bash
-   git tag -a v0.2.3 -m "Release 0.2.3 — caso Dompir, Umami y Open Graph"
-   git push origin v0.2.3
+   git tag -a v0.3.0 -m "Release 0.3.0 — casos de estudio y posicionamiento senior"
+   git push origin v0.3.0
    ```
-3. Opcional: en **GitHub → Releases**, crea una release desde el tag `v0.2.3` y pega el bloque de `[0.2.3]` como notas.
+3. Opcional: en **GitHub → Releases**, crea una release desde el tag `v0.3.0` y pega el bloque de `[0.3.0]` como notas.
 
-[Unreleased]: https://github.com/jhonben94/cv/compare/v0.2.3...HEAD
+[Unreleased]: https://github.com/jhonben94/cv/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/jhonben94/cv/releases/tag/v0.3.0
 [0.2.3]: https://github.com/jhonben94/cv/releases/tag/v0.2.3
 [0.2.2]: https://github.com/jhonben94/cv/releases/tag/v0.2.2
 [0.2.1]: https://github.com/jhonben94/cv/releases/tag/v0.2.1

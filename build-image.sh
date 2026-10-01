@@ -16,6 +16,8 @@
 #   REGISTRY  nombre de imagen sin tag (por defecto: jhonybenitez/cv)
 #   PLATFORM  p.ej. linux/amd64
 #   PUSH      1 para empujar tras el build (alternativa a --push)
+#   NEXT_PUBLIC_SITE_URL (y otras NEXT_PUBLIC_*)  se pasan como --build-arg; el Dockerfile
+#             usa https://jhonybenitez.dev por defecto
 
 set -euo pipefail
 
@@ -60,6 +62,11 @@ args=(docker build -f Dockerfile -t "$TAG_VERSION" -t "$TAG_LATEST")
 if [[ -n "${PLATFORM}" ]]; then
   args+=(--platform "${PLATFORM}")
 fi
+for v in NEXT_PUBLIC_SITE_URL NEXT_PUBLIC_CONTACT_EMAIL NEXT_PUBLIC_GITHUB_URL NEXT_PUBLIC_LINKEDIN_URL NEXT_PUBLIC_UMAMI_SCRIPT_URL NEXT_PUBLIC_UMAMI_WEBSITE_ID; do
+  if [[ -n "${!v:-}" ]]; then
+    args+=(--build-arg "${v}=${!v}")
+  fi
+done
 args+=(.)
 
 echo "→ Registro: ${REGISTRY}"
@@ -70,7 +77,7 @@ echo "→ docker build -f Dockerfile -t ${TAG_VERSION} -t ${TAG_LATEST}$([[ -n "
 
 echo ""
 echo "Build OK."
-echo "Probar:  docker run --rm -p 3000:3000 -e NEXT_PUBLIC_SITE_URL=https://tu-dominio.com ${TAG_LATEST}"
+echo "Probar:  docker run --rm -p 3000:3000 ${TAG_LATEST}"
 
 if [[ "${DO_PUSH}" -eq 1 ]]; then
   echo ""
