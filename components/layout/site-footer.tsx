@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { siteConfig } from "@/lib/site";
+import { siteConfig, whatsappHref } from "@/lib/site";
 
 export async function SiteFooter() {
   const t = await getTranslations("Footer");
@@ -24,12 +24,30 @@ export async function SiteFooter() {
             >
               {siteConfig.email}
             </a>
+            {" · "}
+            <a
+              href={whatsappHref()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer underline-offset-4 hover:underline"
+            >
+              {siteConfig.phone}
+            </a>
           </p>
           <p className="mt-4 text-xs text-[var(--color-muted)]">
             © {year} {siteConfig.personName}. {t("rights")}
           </p>
         </div>
         <div className="flex flex-wrap gap-4 text-sm">
+          <a
+            href={whatsappHref(t("whatsappMessage"))}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-umami-event="whatsapp-click"
+            className="cursor-pointer font-medium text-[var(--color-cta)] hover:underline"
+          >
+            WhatsApp
+          </a>
           <a
             href={siteConfig.github}
             target="_blank"

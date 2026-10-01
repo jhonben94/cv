@@ -1,8 +1,8 @@
-import { ArrowDown, Download, ExternalLink, Mail } from "lucide-react";
+import { ArrowDown, Download, ExternalLink, Mail, MessageCircle } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { PublicAssetImg } from "@/components/media/public-asset-img";
 import { isCvDownloadEnabled } from "@/lib/cv-download";
-import { siteConfig } from "@/lib/site";
+import { siteConfig, whatsappHref } from "@/lib/site";
 
 export async function HeroSection() {
   const t = await getTranslations("Hero");
@@ -59,6 +59,17 @@ export async function HeroSection() {
                 {t("ctaCv")}
               </a>
             ) : null}
+            <a
+              href={whatsappHref(t("whatsappMessage"))}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-umami-event="whatsapp-click"
+              data-umami-event-lang={locale}
+              className="inline-flex cursor-pointer items-center gap-2 rounded-[var(--radius-btn)] bg-[#25D366] px-5 py-3 text-sm font-semibold text-[#052e16] shadow-[var(--shadow-md)] transition hover:opacity-90"
+            >
+              <MessageCircle className="h-4 w-4" aria-hidden />
+              {t("ctaWhatsapp")}
+            </a>
             <a
               href={`mailto:${siteConfig.email}`}
               className="inline-flex cursor-pointer items-center gap-2 rounded-[var(--radius-btn)] border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-sm font-medium text-[var(--color-text)] transition hover:border-[var(--color-primary)]"

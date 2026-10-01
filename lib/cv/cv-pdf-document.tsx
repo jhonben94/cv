@@ -227,6 +227,31 @@ function isPlaceholderGithub(url: string): boolean {
   }
 }
 
+type FeaturedLink = { label: string; url: string };
+
+/** Enlaces del proyecto: producto público (si existe) y arquitectura de la solución en el portfolio. */
+function resolveFeaturedLinks(
+  siteUrl: string,
+  lang: Lang,
+  p: CvFeaturedProject,
+): FeaturedLink[] {
+  const base = siteUrl.replace(/\/$/, "");
+  const links: FeaturedLink[] = [];
+  if (p.externalUrl?.trim()) {
+    links.push({
+      label: lang === "es" ? "Producto en vivo" : "Live product",
+      url: p.externalUrl.trim(),
+    });
+  }
+  if (p.portfolioSlug?.trim()) {
+    links.push({
+      label: lang === "es" ? "Arquitectura de la solución" : "Solution architecture",
+      url: `${base}/${lang}/proyectos/${p.portfolioSlug.trim()}#arquitectura`,
+    });
+  }
+  return links;
+}
+
 function resolveFeaturedLink(
   siteUrl: string,
   lang: Lang,
@@ -329,13 +354,25 @@ export function CvPdfDocument({
         <Text style={styles.h1}>{siteConfig.personName}</Text>
         <Text style={styles.subtitle}>
           {lang === "es"
-            ? "Full Stack Developer · Software Architect · DevOps"
-            : "Full Stack Developer · Software Architect · DevOps"}
+            ? "Senior Software Engineer · Technical Lead · Software Architect"
+            : "Senior Software Engineer · Technical Lead · Software Architect"}
         </Text>
 
         <Text style={styles.h2}>{c.contact}</Text>
         <View style={{ marginBottom: 8 }}>
           <Text style={styles.contactLine}>{siteConfig.email}</Text>
+          <Link
+            src={`https://wa.me/${siteConfig.whatsappNumber}`}
+            style={{ ...styles.contactLine, ...styles.link }}
+          >
+            {`WhatsApp: ${siteConfig.phone}`}
+          </Link>
+          <Link
+            src={siteConfig.siteUrl}
+            style={{ ...styles.contactLine, ...styles.link }}
+          >
+            {siteConfig.siteUrl}
+          </Link>
           <Link
             src={siteConfig.linkedin}
             style={{ ...styles.contactLine, ...styles.link }}
@@ -403,23 +440,20 @@ export function CvPdfDocument({
       <Page size="A4" style={styles.page}>
         <Text style={styles.h2}>{c.featured}</Text>
         {featured.map((p, i) => {
-          const href = resolveFeaturedLink(siteUrl, lang, p);
+          const links = resolveFeaturedLinks(siteUrl, lang, p);
           return (
             <View key={i} style={{ marginBottom: 8 }} wrap={false}>
               <Text style={styles.projectTitle}>{p.title[lang]}</Text>
               <Text style={styles.projectMeta}>{p.stackLine[lang]}</Text>
               <Text style={styles.body}>{p.highlight[lang]}</Text>
-              {href ? (
-                <Link src={href} style={{ ...styles.body, ...styles.link }}>
-                  {href}
-                </Link>
-              ) : (
-                <Text style={{ ...styles.body, color: "#666", fontSize: 9 }}>
-                  {lang === "es"
-                    ? "Enlace: completar externalUrl o portfolioSlug en data/cv.ts"
-                    : "Link: set externalUrl or portfolioSlug in data/cv.ts"}
+              {links.map((l) => (
+                <Text key={l.url} style={styles.body}>
+                  {l.label}:{" "}
+                  <Link src={l.url} style={styles.link}>
+                    {l.url}
+                  </Link>
                 </Text>
-              )}
+              ))}
             </View>
           );
         })}

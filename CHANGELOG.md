@@ -16,6 +16,20 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 
 ---
 
+## [0.3.1] - 2026-09-30
+
+CTA de WhatsApp y enlaces del CV en PDF corregidos.
+
+### Añadido
+- **CTA de WhatsApp** (+595 994 683 545) en el hero (con mensaje prellenado ES/EN y evento Umami `whatsapp-click`) y en el pie de página.
+- **CV en PDF**: teléfono/WhatsApp y sitio web en el bloque de contacto.
+
+### Cambiado
+- **CV en PDF**: cada proyecto muestra sus enlaces con etiqueta — *Producto en vivo* (si es público) y *Arquitectura de la solución* (ficha del portfolio, `#arquitectura`), para que los proyectos privados enlacen siempre a su arquitectura. Subtítulo actualizado al nuevo posicionamiento.
+- Valores por defecto de `lib/site.ts`: `siteUrl` = `https://jhonybenitez.dev` (antes `localhost:3000`, que aparecía en los enlaces del PDF descargado) y GitHub = `https://github.com/jhonben94`.
+
+---
+
 ## [0.3.0] - 2026-09-30
 
 Reposicionamiento senior/lead del portfolio: casos de estudio, sección de decisiones técnicas y CV descargable con datos reales.
@@ -108,12 +122,13 @@ Primera versión publicable del sitio: portfolio técnico con i18n, casos de est
 1. El remoto del proyecto es `https://github.com/jhonben94/cv.git` (rama por defecto según configuración del repo; suele ser `master` o `main`).
 2. Etiqueta esta versión alinearla con el changelog:
    ```bash
-   git tag -a v0.3.0 -m "Release 0.3.0 — casos de estudio y posicionamiento senior"
-   git push origin v0.3.0
+   git tag -a v0.3.1 -m "Release 0.3.1 — WhatsApp y enlaces del CV"
+   git push origin v0.3.1
    ```
-3. Opcional: en **GitHub → Releases**, crea una release desde el tag `v0.3.0` y pega el bloque de `[0.3.0]` como notas.
+3. Opcional: en **GitHub → Releases**, crea una release desde el tag `v0.3.1` y pega el bloque de `[0.3.1]` como notas.
 
-[Unreleased]: https://github.com/jhonben94/cv/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/jhonben94/cv/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/jhonben94/cv/releases/tag/v0.3.1
 [0.3.0]: https://github.com/jhonben94/cv/releases/tag/v0.3.0
 [0.2.3]: https://github.com/jhonben94/cv/releases/tag/v0.2.3
 [0.2.2]: https://github.com/jhonben94/cv/releases/tag/v0.2.2

@@ -43,7 +43,9 @@
         "value": "Docker · Kubernetes · CI/CD",
         "label": "Platform engineering"
       }
-    ]
+    ],
+    "ctaWhatsapp": "Chat on WhatsApp",
+    "whatsappMessage": "Hi Jhony, I saw your portfolio and would like to talk."
   },
   "About": {
     "title": "About",
@@ -131,7 +133,8 @@
   },
   "Footer": {
     "rights": "All rights reserved.",
-    "builtWith": "Built with Next.js"
+    "builtWith": "Built with Next.js",
+    "whatsappMessage": "Hi Jhony, I saw your portfolio and would like to talk."
   },
   "ProjectsPage": {
     "title": "Projects",
