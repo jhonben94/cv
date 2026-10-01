@@ -2,6 +2,8 @@
 
 Todos los cambios notables de **square10** (portfolio de Jhony Benítez) se documentan aquí.
 
+**Repositorio público:** [github.com/jhonben94/cv](https://github.com/jhonben94/cv).
+
 El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y el versionado a [SemVer](https://semver.org/lang/es/). La versión publicada debe coincidir con `version` en `package.json` al etiquetar en Git.
 
 ## [Unreleased]
@@ -13,6 +15,33 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y e
 - (vacío)
 
 ---
+
+## [0.2.3] - 2026-09-30
+
+Nuevo caso **Dompir**, mejoras de SquareOne en el CV y portfolio, analítica opcional y tarjetas Open Graph dinámicas.
+
+### Añadido
+
+- **Caso Dompir** (`dompir-erp-pos-multitenant`) en `data/projects.ts` (ES/EN, con diagrama Mermaid): migración Strangler Fig de un ERP/POS Java EE forkeado por cliente a una plataforma multi-tenant (Spring Boot 4, Angular 21). Incluye migración verificada: 20/20 conteos y 9/9 valores de control conciliados, 0 diferencias y checksums idénticos en 3 corridas del ETL.
+- **Dompir en el CV** (`data/cv.ts`): párrafo de resumen, viñeta de experiencia y primer proyecto destacado.
+- **Analítica opcional con Umami**: el script se carga solo si existen `NEXT_PUBLIC_UMAMI_SCRIPT_URL` y `NEXT_PUBLIC_UMAMI_WEBSITE_ID`; eventos `project-link-click` (con `slug` y `kind`) en los enlaces de la ficha de proyecto.
+- **Imágenes Open Graph dinámicas** para la home y para cada proyecto (`opengraph-image.tsx`), con fuente de Google acotada a los caracteres usados y *fallback* a la fuente por defecto si no hay red (`lib/og/load-google-font.ts`).
+
+### Cambiado
+
+- **SquareOne** (`data/projects.ts` y `data/cv.ts`): se documentan las mejoras de seguridad (autorización por objeto, redacción de datos personales por rol), integridad (sync FIDE atómico con lock distribuido, bloqueo optimista con `If-Match`) y confiabilidad (outbox transaccional de correo, errores RFC 9457).
+- **Copy en español** pulido en `messages/es.json`, `data/cv.ts` y `data/projects.ts` (SquareOne: problema y catálogo; Venta Blitz: beneficio).
+- `package.json` sube a **0.2.3**.
+
+## [0.2.2] - 2026-05-06
+
+Revisión editorial del contenido en **español**: coherencia terminológica, registro uniforme y menos anglicismos sueltos en párrafos largos.
+
+### Cambiado
+
+- **`messages/es.json`**: navegación y encabezados (p. ej. competencias técnicas, historial de cambios), textos de proyectos y de la ficha de detalle (**Características principales** en lugar de “Features”).
+- **`data/cv.ts`**: pulido del resumen y bullets en español (Stack Venta Blitz/Docker Compose, fintech sin “transaction-heavy”, Zentra con GIS y PostgreSQL descritos de forma natural).
+- **`data/projects.ts`**: copy del caso **SquareOne** y beneficio **Venta Blitz** en español más preciso y ortografía (**catálogo**).
 
 ## [0.2.1] - 2026-05-05
 
@@ -50,14 +79,16 @@ Primera versión publicable del sitio: portfolio técnico con i18n, casos de est
 
 ### Notas para GitHub
 
-1. Tras crear el repositorio, sustituye `OWNER` y `REPO` en los enlaces del pie (o elimínalos hasta el primer tag).
+1. El remoto del proyecto es `https://github.com/jhonben94/cv.git` (rama por defecto según configuración del repo; suele ser `master` o `main`).
 2. Etiqueta esta versión alinearla con el changelog:
    ```bash
-   git tag -a v0.2.1 -m "Release 0.2.1 — changelog público y CV senior"
-   git push origin v0.2.1
+   git tag -a v0.2.3 -m "Release 0.2.3 — caso Dompir, Umami y Open Graph"
+   git push origin v0.2.3
    ```
-3. Opcional: en **GitHub → Releases**, crea una release desde el tag `v0.2.1` y pega el bloque de `[0.2.1]` como notas.
+3. Opcional: en **GitHub → Releases**, crea una release desde el tag `v0.2.3` y pega el bloque de `[0.2.3]` como notas.
 
-[Unreleased]: https://github.com/OWNER/REPO/compare/v0.2.1...HEAD
-[0.2.1]: https://github.com/OWNER/REPO/releases/tag/v0.2.1
-[0.1.0]: https://github.com/OWNER/REPO/releases/tag/v0.1.0
+[Unreleased]: https://github.com/jhonben94/cv/compare/v0.2.3...HEAD
+[0.2.3]: https://github.com/jhonben94/cv/releases/tag/v0.2.3
+[0.2.2]: https://github.com/jhonben94/cv/releases/tag/v0.2.2
+[0.2.1]: https://github.com/jhonben94/cv/releases/tag/v0.2.1
+[0.1.0]: https://github.com/jhonben94/cv/releases/tag/v0.1.0

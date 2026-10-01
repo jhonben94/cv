@@ -2,6 +2,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { ThemeProvider } from "@/components/providers/theme-provider";
@@ -47,9 +48,18 @@ export default async function LocaleLayout({ children, params }: Props) {
   setRequestLocale(locale);
   const messages = await getMessages();
 
+  const { umamiScriptUrl, umamiWebsiteId } = siteConfig;
+
   return (
     <html lang={locale} className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
       <body className="min-h-screen antialiased" suppressHydrationWarning>
+        {umamiScriptUrl && umamiWebsiteId ? (
+          <Script
+            src={umamiScriptUrl}
+            data-website-id={umamiWebsiteId}
+            strategy="afterInteractive"
+          />
+        ) : null}
         <ThemeProvider>
           <NextIntlClientProvider messages={messages}>
             <SiteHeader />

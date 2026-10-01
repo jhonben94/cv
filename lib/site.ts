@@ -8,4 +8,6 @@ export const siteConfig = {
     "https://www.linkedin.com/in/jhony-benitez",
   siteUrl:
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  umamiScriptUrl: process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL,
+  umamiWebsiteId: process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID,
 };

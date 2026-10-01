@@ -614,7 +614,7 @@ export const projects: ProjectEntry[] = [
       en: "Public rankings portal and player discovery (FEPARAJ · open data), backed by an operations layer for clubs, registrations, transfers, tournaments, and reliable FIDE ingestion from a full-stack monorepo.",
     },
     problem: {
-      es: "Unificar la experiencia ciudadana (posiciones, ratings y estadísticas actualizadas) con trámites federativos auditables, identidad OIDC y catálogos FIDE actualizados sin depender de spreadsheets o silos.",
+      es: "Unificar lo que consume el público (rankings vigentes, ratings FIDE y estadísticas actualizadas) con trámites federativos auditables, identidad OIDC y datos FIDE confiables, sin depender de hojas de cálculo dispersas.",
       en: "Unify the public experience (standings, ratings, and up-to-date statistics) with auditable federation workflows, OIDC identity, and maintained FIDE catalogs without spreadsheet silos.",
     },
     features: {
@@ -622,13 +622,17 @@ export const projects: ProjectEntry[] = [
         "Backend Quarkus 3 + Flyway sobre PostgreSQL",
         "Frontend Angular 21 con SSR, PrimeNG",
         "OIDC con Keycloak para flujos federativos protegidos",
-        "Jobs y scraper Python (FastAPI) hacia PostgreSQL para datos FIDE/catalogo",
+        "Jobs y scraper Python (FastAPI) hacia PostgreSQL para datos FIDE/catálogo",
+        "Sincronización FIDE atómica con lock distribuido, bloqueo optimista (If-Match) y outbox transaccional de correo",
+        "Autorización por objeto, redacción de datos personales por rol y errores RFC 9457 con X-Request-ID",
       ],
       en: [
         "Quarkus 3 backend + Flyway on PostgreSQL",
         "Angular 21 frontend with SSR and PrimeNG",
         "OIDC via Keycloak for protected federation workflows",
         "Python jobs/scraper (FastAPI) into PostgreSQL for FIDE/catalog data",
+        "Atomic FIDE sync with distributed lock, optimistic locking (If-Match), and transactional email outbox",
+        "Object-level authorization, role-based PII redaction, and RFC 9457 errors with X-Request-ID",
       ],
     },
     decisionSummary: {
@@ -651,6 +655,67 @@ export const projects: ProjectEntry[] = [
       es: "Portal + plataforma federativa",
       en: "Portal + federation platform",
     },
+  },
+  {
+    slug: "dompir-erp-pos-multitenant",
+    type: "architecture",
+    stack: ["Spring Boot", "Angular", "MyBatis", "PostgreSQL", "Flyway", "Docker"],
+    image: "/placeholders/crm.svg",
+    links: {},
+    title: {
+      es: "Dompir — migración de ERP/POS legado a plataforma multi-tenant",
+      en: "Dompir — legacy ERP/POS migration to a multi-tenant platform",
+    },
+    shortDescription: {
+      es: "Migración de un ERP/POS Java EE forkeado por cliente (8 proyectos y un Angular 8 sin autenticación real) a un único backend multi-tenant con Spring Boot 4 y un frontend Angular 21, con migración de datos verificable.",
+      en: "Migration of a client-forked Java EE ERP/POS (8 projects plus an Angular 8 app with no real authentication) into a single multi-tenant Spring Boot 4 backend and an Angular 21 frontend, with verifiable data migration.",
+    },
+    problem: {
+      es: "El legado vivía en forks por cliente, sin control de versiones ni autenticación real. Había que consolidarlo sin congelar la operación y demostrar que los datos migrados coinciden con el origen.",
+      en: "The legacy lived in per-client forks with no version control or real authentication. It had to be consolidated without freezing operations, and the migrated data had to be proven to match the source.",
+    },
+    features: {
+      es: [
+        "Estrategia Strangler Fig por módulos: 11 módulos de backend (cliente, producto, inventario, venta, cobranza, facturación, comisiones, egresos, recibo, entre otros)",
+        "Multi-tenencia con JWT y cabecera X-Tenant-Id, Flyway, feature flags (Unleash) y observabilidad con Micrometer, Prometheus y OpenTelemetry",
+        "Dinero calculado solo en el backend (BigDecimal); el frontend únicamente presenta",
+        "ETL piloto idempotente sobre un dump real, con datos personales anonimizados y ejecución en PostgreSQL descartable",
+        "Conciliación de solo lectura sobre 5 dumps de clientes y matriz de paridad legado vs. nuevo",
+      ],
+      en: [
+        "Strangler Fig strategy per module: 11 backend modules (customers, products, inventory, sales, collections, invoicing, commissions, expenses, receipts, among others)",
+        "Multi-tenancy with JWT and X-Tenant-Id header, Flyway, feature flags (Unleash), and Micrometer, Prometheus, and OpenTelemetry observability",
+        "Money calculated only in the backend (BigDecimal); the frontend only presents",
+        "Idempotent pilot ETL over a real dump, with personal data anonymized and run in a disposable PostgreSQL",
+        "Read-only reconciliation across 5 client dumps plus a legacy-vs-new parity matrix",
+      ],
+    },
+    decisionSummary: {
+      es: "Un solo binario multi-tenant diferenciado por tenant, configuración y feature flags en lugar de forks; MyBatis para conservar control explícito del SQL heredado.",
+      en: "A single multi-tenant binary differentiated by tenant, configuration, and feature flags instead of forks; MyBatis to keep explicit control over the inherited SQL.",
+    },
+    benefitSummary: {
+      es: "Migración verificada: 20 de 20 conteos y 9 de 9 valores de control conciliados (3.317 ventas, 3.286 cobros, 11.807 líneas, 12.009 movimientos), 0 diferencias y checksums MD5 idénticos en 3 corridas.",
+      en: "Verified migration: 20 of 20 counts and 9 of 9 control values reconciled (3,317 sales, 3,286 payments, 11,807 lines, 12,009 movements), 0 differences, and identical MD5 checksums across 3 runs.",
+    },
+    flowSummary: {
+      es: "Dump legado → ETL en contenedor descartable (anonimizado) → esquema nuevo → informe de validación con conteos, sumas y checksums.",
+      en: "Legacy dump → ETL in a disposable container (anonymized) → new schema → validation report with counts, sums, and checksums.",
+    },
+    componentsSummary: {
+      es: "backend-core (Spring Boot 4, Java 21), frontend (Angular 21), PostgreSQL 16, Unleash, Docker Compose y scripts de seed/ETL.",
+      en: "backend-core (Spring Boot 4, Java 21), frontend (Angular 21), PostgreSQL 16, Unleash, Docker Compose, and seed/ETL scripts.",
+    },
+    architectureName: {
+      es: "Strangler Fig multi-tenant",
+      en: "Multi-tenant Strangler Fig",
+    },
+    mermaid: `flowchart LR
+  L[Legado Java EE + dump] --> E[ETL anonimizado]
+  E --> D[(PostgreSQL 16)]
+  D --> B[backend-core Spring Boot]
+  B --> F[Angular 21]
+  E --> V[Informe de validacion]`,
   },
   {
     slug: "venta-blitz-jhipster",
@@ -687,7 +752,7 @@ export const projects: ProjectEntry[] = [
       en: "JHipster 8 to accelerate CRUD, security and admin without reinventing the stack.",
     },
     benefitSummary: {
-      es: "Base enterprise lista para operaciones de fuerza de ventas.",
+      es: "Base sólida tipo producto empresarial, orientada a la operación de fuerza de ventas en campo.",
       en: "Enterprise-ready base for sales force operations.",
     },
     flowSummary: {

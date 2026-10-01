@@ -68,6 +68,8 @@ export function ProjectCard({
         </div>
         <Link
           href={`/proyectos/${project.slug}`}
+          data-umami-event="project-view"
+          data-umami-event-slug={project.slug}
           className="mt-auto inline-flex cursor-pointer items-center justify-center rounded-[var(--radius-btn)] bg-[var(--color-cta)] px-4 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
         >
           {viewDetail}

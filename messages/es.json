@@ -7,13 +7,13 @@
     "home": "Inicio",
     "about": "Sobre mí",
     "projects": "Proyectos",
-    "skills": "Skills",
+    "skills": "Habilidades",
     "ai": "IA",
     "architectures": "Arquitecturas",
     "certifications": "Certificaciones",
     "contact": "Contacto",
     "projectsFull": "Proyectos (lista)",
-    "changelog": "Changelog",
+    "changelog": "Historial de cambios",
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar"
   },
@@ -56,7 +56,7 @@
     "card2Hint": "Formación continua y contenido aplicado a proyectos reales — próximamente."
   },
   "Skills": {
-    "title": "Skills técnicas",
+    "title": "Competencias técnicas",
     "subtitle": "Stack y prácticas que aplico en producción.",
     "categories": {
       "frontend": "Frontend",
@@ -75,7 +75,7 @@
   },
   "Projects": {
     "title": "Proyectos destacados",
-    "subtitle": "Selección de trabajos representativos. Filtrá por categoría.",
+    "subtitle": "Selección de trabajos representativos con filtro por categoría.",
     "filterAll": "Todos",
     "problemLabel": "Problema",
     "stackLabel": "Stack",
@@ -105,7 +105,7 @@
     "linkReadme": "README",
     "linkDocs": "Documentación",
     "linkDiagram": "Diagrama",
-    "features": "Features principales"
+    "features": "Características principales"
   },
   "Footer": {
     "rights": "Todos los derechos reservados.",
@@ -113,13 +113,13 @@
   },
   "ProjectsPage": {
     "title": "Proyectos",
-    "description": "Casos de estudio y productos. Usá el filtro o la URL (?tipo=devops) para compartir una vista."
+    "description": "Casos de estudio y productos. Usa el filtro o añade el parámetro en la URL (por ejemplo ?tipo=devops) para compartir una vista."
   },
   "Changelog": {
-    "title": "Changelog",
-    "metaTitle": "Changelog",
-    "metaDescription": "Historial de versiones y cambios notables de este sitio (mismo contenido que CHANGELOG.md del repositorio).",
-    "subtitle": "Historial de versiones del proyecto; se actualiza junto al archivo CHANGELOG.md en Git.",
+    "title": "Historial de cambios",
+    "metaTitle": "Historial de cambios",
+    "metaDescription": "Historial de versiones y cambios destacados del sitio; el mismo contenido que CHANGELOG.md en el repositorio.",
+    "subtitle": "Se actualiza junto con CHANGELOG.md en Git al publicar una versión nueva.",
     "back": "Volver al inicio"
   }
 }

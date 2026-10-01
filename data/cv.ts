@@ -8,17 +8,19 @@ import type {
 /** Párrafos del resumen profesional (solo PDF / datos editoriales). */
 export const cvSummary: Localized<string[]> = {
   es: [
-    "Ingeniero full stack senior con foco en arquitectura, plataformas distribuidas y ownership end-to-end: APIs Java en Spring Boot (JHipster) y Quarkus, servicios Node/TypeScript, componentes GIS (Python/FastAPI) y clientes Angular, Flutter con experiencia SSR y producto.",
+    "Ingeniero full stack senior con foco en arquitectura, plataformas distribuidas y ownership de punta a punta: APIs Java con Spring Boot (JHipster) y Quarkus, servicios Node.js/TypeScript, componentes GIS (Python/FastAPI) y frontends web (Angular) y móviles (Flutter), con SSR donde aplica.",
     "Diseño e implementación de sistemas modularizados: contratos REST explícitos, migraciones de esquema (Liquibase/Flyway), autenticación OIDC/JWT y separación clara entre servicios de dominio, integración y geometría.",
     "Lead técnico en SquareOne — ecosistema digital para federaciones de ajedrez: jugadores, clubes, transferencias, torneos e ingestión de datos de rankings externos sobre PostgreSQL y operaciones programadas.",
-    "Arquitectura del entorno Zentra — ERP y plataforma operativa polyglot: núcleo Quarkus, SPA Angular administrativa, servicio Fastify para sincronización periódica de padrones públicos hacia Postgres, Redis opcional para lectura escalable y microservicio GIS con GeoPackage y reverse geocoding.",
+    "Dompir — migración de un ERP/POS Java EE forkeado por cliente a una plataforma multi-tenant (Spring Boot 4, Angular 21) con ETL idempotente y conciliación verificada: 20 de 20 conteos y 9 de 9 valores de control sin diferencias.",
+    "Arquitectura del entorno Zentra — ERP y plataforma operativa políglota: núcleo Quarkus, aplicación Angular de administración, servicio Fastify para sincronización periódica de padrones públicos hacia PostgreSQL, Redis opcional para escalar lecturas y microservicio GIS con GeoPackage y geocodificación inversa.",
     "Venta Blitz — plataforma de ventas y cobranzas de campo: monolito modular JHipster con app Flutter para recorridos, geolocalización y cuadros de mando contra la misma línea API.",
-    "Cultura de entrega reproducible: Docker y Docker Compose multi-servicio, probes de salud (liveness), exportación Prometheus donde aplica, scripts de build/push coordinados entre imágenes y despliegue en infraestructura gestionada (p. ej. Dokploy/Coolify) sin sacrificar seguridad.",
+    "Cultura de entrega reproducible: Docker y Docker Compose multi-servicio, comprobaciones de salud en contenedor, exportación Prometheus donde aplica, scripts de build/push coordinados entre imágenes y despliegue en infraestructura gestionada (p. ej. Dokploy/Coolify) sin sacrificar seguridad.",
   ],
   en: [
     "Senior full-stack engineer focused on architecture, distributed platforms, and end-to-end ownership: Java APIs on Spring Boot (JHipster) and Quarkus, TypeScript Node services, GIS components (Python/FastAPI), and Angular plus Flutter clients with SSR and product delivery experience.",
     "I design modular systems with explicit REST contracts, schema migrations (Liquibase/Flyway), OIDC/JWT-first security, and clear boundaries between domain, integration, and geometry services.",
     "Technical lead on SquareOne — a digital ecosystem for chess federations covering players, clubs, transfers, tournaments, and ingestion of external rating data into PostgreSQL with scheduled operations.",
+    "Dompir — migration of a client-forked Java EE ERP/POS into a multi-tenant platform (Spring Boot 4, Angular 21) with an idempotent ETL and verified reconciliation: 20 of 20 counts and 9 of 9 control values with no differences.",
     "I architected the Zentra environment — enterprise ERP polyglot mesh: Quarkus core, Angular admin SPA, Fastify service for periodic public-registry synchronization into Postgres, optional Redis-backed read throughput, and a dedicated GIS tier with GeoPackage storage and reverse geocoding.",
     "Venta Blitz — field sales and collections: JHipster monolith complemented by a Flutter mobile app with maps and dashboards wired to the same API surface.",
     "Repeatable delivery: multi-service Docker Compose, Kubernetes-style health probes, Prometheus export where appropriate, coordinated image versioning, and deployments on managed container hosting without leaking secrets across stacks.",
@@ -43,14 +45,18 @@ export const cvExperience: CvExperienceEntry[] = [
     highlights: {
       es: [
         "SquareOne: plataforma full stack para federación de ajedrez — API Quarkus (Java 21), Angular SSR, Keycloak OIDC, Flyway/PG y jobs orientados a rankings y procesos federativos; producto público squareone.kahani.dev.",
+        "Dompir — migración Strangler Fig de un ERP/POS Java EE (8 forks por cliente) a un backend multi-tenant Spring Boot 4 + Angular 21; ETL piloto verificado (3.317 ventas, 0 diferencias, checksums idénticos en 3 corridas).",
+        "SquareOne (mejoras): autorización por objeto, sync FIDE atómico con lock distribuido, bloqueo optimista, outbox de correo, Problem Details y 83 tests backend.",
         "Zentra — ERP modular multi-servicio: Quarkus + Angular (PrimeNG), servicio Fastify para ETL/sync de registros tributarios públicos→PostgreSQL, Redis opcional, API geo Python sobre GeoPackage; compose y Dokploy como patrón de despliegue.",
-        "Venta Blitz — JHipster/Spring Boot (Java 17), Liquibase y PostgreSQL en producción compose; cliente Flutter MobX+Dio para vendedores con mapas, JWT y métricas operativas (Prometheus opcional).",
+        "Venta Blitz — JHipster/Spring Boot (Java 17), Liquibase y PostgreSQL con stack desplegado vía Docker Compose; cliente Flutter MobX+Dio para vendedores con mapas, JWT y métricas operativas (exportación Prometheus opcional).",
         "Lideré decisiones arquitectónicas entre monolitos modulares y servicios especializados, priorizando trazabilidad de datos, límites de contexto y operación estable en contenedor.",
         "Automatización de builds (Maven Jib/Java, pipelines npm/Python) y publicación consistente de imágenes etiquetadas con versiones declarativas en pom/package/pyproject.",
         "Docencia universitaria complementaria al delivery de producto; mentoría técnica a equipos y partners.",
       ],
       en: [
         "SquareOne — full-stack federation platform: Quarkus APIs (Java 21), SSR Angular frontend, Keycloak OIDC, Flyway-managed PostgreSQL, and scheduled federation/rating workflows; public product at squareone.kahani.dev.",
+        "Dompir — Strangler Fig migration of a Java EE ERP/POS (8 client forks) into a Spring Boot 4 + Angular 21 multi-tenant backend; verified pilot ETL (3,317 sales, 0 differences, identical checksums across 3 runs).",
+        "SquareOne hardening: object-level authorization, atomic FIDE sync with distributed lock, optimistic locking, email outbox, Problem Details, and 83 backend tests.",
         "Zentra — modular multi-service ERP: Quarkus plus Angular admin (PrimeNG); Fastify service for recurring public-registry ETL/sync into Postgres; optional Redis acceleration; Python GIS API on GeoPackage; Docker Compose stacks and Dokploy-oriented deployment splits.",
         "Venta Blitz — Spring Boot/JHipster core (Java 17) with Liquibase and Postgres in Compose-based production footprints; Flutter sales app (MobX, Dio, maps, JWT) wired to REST with optional Prometheus export.",
         "Led architectural trade-offs across modular monoliths vs dedicated services emphasizing data lineage, bounded contexts, and reliable container ops.",
@@ -75,7 +81,7 @@ export const cvExperience: CvExperienceEntry[] = [
     highlights: {
       es: [
         "Arquitectura de integraciones, APIs y equipos de entrega en contexto regulado.",
-        "Decisiones de stack, observabilidad y pipelines de despliegue para sistemas transaction-heavy.",
+        "Decisiones de stack, observabilidad y pipelines de despliegue para sistemas con alta carga transaccional.",
       ],
       en: [
         "Architecture for integrations, APIs, and delivery teams operating under regulatory constraints.",
@@ -136,8 +142,8 @@ export const cvFeaturedProjects: CvFeaturedProject[] = [
       en: "Quarkus · Angular SSR · Keycloak · PostgreSQL · Flyway",
     },
     highlight: {
-      es: "Diseñé y consolidé un ecosistema digital moderno: rankings, clubes, transferencias y torneos con identidad OIDC, persistencia relacional y sincronización con fuentes externas de ratings.",
-      en: "Architected a modern digital ecosystem for federations—rankings, clubs, transfers, and tournaments with OIDC identity, relational persistence, and ingestion from external rating sources.",
+      es: "Diseñé y consolidé un ecosistema digital moderno: rankings, clubes, transferencias y torneos con identidad OIDC, persistencia relacional y sincronización con fuentes externas de ratings; endurecí seguridad, integridad (sync FIDE atómico, bloqueo optimista) y confiabilidad (outbox de correo, Problem Details).",
+      en: "Architected a modern digital ecosystem for federations—rankings, clubs, transfers, and tournaments with OIDC identity, relational persistence, and ingestion from external rating sources; hardened security, integrity (atomic FIDE sync, optimistic locking), and reliability (email outbox, Problem Details).",
     },
     externalUrl: "https://squareone.kahani.dev/",
     portfolioSlug: "squareone-paraguay-ranking-plataforma",
@@ -145,7 +151,23 @@ export const cvFeaturedProjects: CvFeaturedProject[] = [
   },
   {
     title: {
-      es: "Zentra — ERP geo-habilitado y multi-servicio",
+      es: "Dompir — migración ERP/POS a plataforma multi-tenant",
+      en: "Dompir — ERP/POS migration to a multi-tenant platform",
+    },
+    stackLine: {
+      es: "Spring Boot 4 · Angular 21 · MyBatis · PostgreSQL · Flyway · Docker",
+      en: "Spring Boot 4 · Angular 21 · MyBatis · PostgreSQL · Flyway · Docker",
+    },
+    highlight: {
+      es: "Consolidé 8 forks Java EE en un backend multi-tenant (Strangler Fig, 11 módulos) y verifiqué la migración: 20/20 conteos y 9/9 valores de control conciliados, 0 diferencias, ETL idempotente con datos anonimizados.",
+      en: "Consolidated 8 Java EE forks into one multi-tenant backend (Strangler Fig, 11 modules) and verified the migration: 20/20 counts and 9/9 control values reconciled, 0 differences, idempotent ETL with anonymized data.",
+    },
+    portfolioSlug: "dompir-erp-pos-multitenant",
+    referenceYear: 2026,
+  },
+  {
+    title: {
+      es: "Zentra — ERP multi-servicio con capacidades GIS",
       en: "Zentra — geo-enabled multi-service ERP",
     },
     stackLine: {
@@ -153,7 +175,7 @@ export const cvFeaturedProjects: CvFeaturedProject[] = [
       en: "Quarkus · Angular · Fastify · Python · PostgreSQL · Redis · GeoPackage",
     },
     highlight: {
-      es: "Plataforma enterprise modular: núcleo API Quarkus, front PrimeNG, integración Node programada hacia Postgres compartido, aceleración de lectura con Redis y capa GIS desacoplada para cartografía y reverse geocoding.",
+      es: "Plataforma empresarial modular: núcleo API Quarkus, front PrimeNG, servicio Fastify con tareas programadas sobre PostgreSQL compartido, Redis opcional como acelerador de lectura y capa GIS desacoplada (GeoPackage, geocodificación inversa).",
       en: "Enterprise modular platform: Quarkus API core, PrimeNG admin, scheduled Node integration into shared Postgres, optional Redis read acceleration, and a decoupled GIS tier for cartography and reverse geocoding.",
     },
     portfolioSlug: "zentra-erp-quarkus-angular",

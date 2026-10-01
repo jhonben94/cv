@@ -47,6 +47,8 @@ export async function HeroSection() {
               <a
                 href={cvPdfHref}
                 download
+                data-umami-event="cv-download"
+                data-umami-event-lang={locale}
                 className="inline-flex cursor-pointer items-center gap-2 rounded-[var(--radius-btn)] border-2 border-[var(--color-primary)] px-5 py-3 text-sm font-semibold text-[var(--color-primary)] transition hover:bg-[var(--color-primary)]/10"
               >
                 <Download className="h-4 w-4" aria-hidden />

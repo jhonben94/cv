@@ -205,6 +205,9 @@ export default async function ProjectDetailPage({ params }: Props) {
                     href={row.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-umami-event="project-link-click"
+                    data-umami-event-slug={slug}
+                    data-umami-event-kind={row.key}
                     className="cursor-pointer font-medium text-[var(--color-cta)] hover:underline"
                   >
                     {row.label}
